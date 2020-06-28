@@ -1,0 +1,152 @@
+.container {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  margin: 1rem 0 1rem 0;
+  top: 0;
+  left: 0;
+  transition: 0.2s ease-in;
+  z-index: 100;
+  background-color: transparent;
+}
+
+.sticky {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.068);
+  position: fixed;
+}
+
+.visible {
+  display: block;
+}
+
+.brand-container {
+  width: 20%;
+  /* background-color: rgb(211, 211, 255); */
+  height: 100%;
+}
+
+.brand-name {
+  font-family: 'Lobster', cursive;
+  font-size: 2.8rem;
+  margin: auto 0;
+  margin-left: 0.5em;
+}
+
+/* nav link*/
+.navbar {
+  width: 50%;
+  display: flex;
+}
+
+.option-container {
+  width: 30%;
+  height: 100%;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: auto;
+  width: 70%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.icon-dropdown {
+  position: relative;
+  width: 20px;
+  margin-left: 0.5em;
+}
+
+.link:nth-child(2) {
+  display: flex;
+}
+.dropdown-icon {
+  position: absolute;
+  font-size: 20px;
+  left: 5px;
+  bottom: 3px;
+}
+
+/* End of nav link*/
+
+/* Search, cart*/
+.option-container {
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.cart {
+  margin-right: 2em;
+  margin-left: 1em;
+}
+
+.search i,
+.cart i {
+  font-size: 30px;
+}
+
+.search i:hover,
+.cart i:hover,
+.link {
+  cursor: pointer;
+}
+
+.input-box {
+  width: 200px;
+  height: 35px;
+  margin-right: 1em;
+  overflow: hidden;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 7px 7px;
+  font-family: 'Montserrat', sans-serif;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.input {
+  /* transform: translateX(100%); */
+  animation: inputAnimation 1.5s ease-in;
+}
+
+.input:focus {
+  outline: none;
+  text-overflow: initial;
+}
+
+/* End of Search, cart*/
+
+@keyframes inputAnimation {
+  from {
+    width: -0%;
+  }
+  to {
+    width: -100%;
+  }
+}

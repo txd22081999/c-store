@@ -1,0 +1,65 @@
+.container {
+  width: 100vw;
+  height: 400px;
+  background: linear-gradient(-45deg, #fddc6e, #fceebf 40%, #fddc6e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+.woman-img-container {
+  width: 33%;
+  height: 100%;
+}
+
+.man-img-container {
+  width: 25%;
+  height: 100%;
+}
+
+.text {
+  width: 37%;
+}
+
+.model {
+  max-width: 100%;
+  height: 402px;
+  margin-top: 5px;
+}
+
+.header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(85, 85, 85);
+  font-size: 1.2rem;
+}
+
+.description:nth-child(1) {
+  margin-top: 0.7em;
+}
+
+.shop-btn {
+  background-color: #9351ff;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  margin-top: 1.5em;
+  box-shadow: rgba(0, 0, 0, 0.445) 3px 3px;
+  border: 1px solid #7b7b7b;
+}
+
+.shop-btn:hover,
+.shop-btn:focus {
+  outline: none;
+  cursor: pointer;
+}

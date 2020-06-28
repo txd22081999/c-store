@@ -1,0 +1,83 @@
+.container {
+  margin: 4em auto 4em;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ship,
+.time,
+.quality,
+.secure {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fbfbfb;
+  padding: 1em 2em;
+  width: 22%;
+  font-family: 'Roboto';
+  border-radius: 15px;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.253);
+}
+
+.left {
+  width: 22%;
+}
+
+.right {
+  width: 72%;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: #454545;
+  margin-top: 0.2em;
+}
+
+.car {
+  font-size: 5rem;
+}
+
+.quality,
+.time {
+  padding: 1em 1em;
+}
+
+.time svg,
+.quality svg {
+  width: 100%;
+}
+
+.secure svg {
+  width: 90%;
+  height: auto;
+}
+
+.secure .left {
+  width: 15%;
+}
+
+.secure .right {
+  width: 77%;
+}
+
+.time .left,
+.quality .left {
+  width: 18%;
+}
+
+.quality .right {
+  width: 79%;
+}

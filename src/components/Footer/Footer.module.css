@@ -1,0 +1,155 @@
+.container {
+  position: relative;
+  height: 350px;
+  background-image: radial-gradient(#606c88d3, #3f4c6bd5);
+  color: white;
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.6fr 0.5fr 0.5fr 1.4fr;
+  grid-template-areas: 'address info account email';
+  width: 95%;
+  margin: 4em auto 0;
+  grid-gap: 1.5em;
+}
+
+.container a {
+  color: #f3f3f3;
+  text-decoration: none;
+}
+
+.address-container {
+  grid-area: address;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.info-container {
+  grid-area: info;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.account-container {
+  grid-area: account;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.email-container {
+  grid-area: email;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.background {
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  width: 85%;
+  height: 100%;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-around;
+}
+
+.background img {
+  width: 45%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.grid-container {
+  font-size: 0.9rem;
+  color: #f3f3f3;
+}
+
+.brand-name {
+  font-size: 2.8rem;
+  margin-bottom: 0.9rem;
+  font-family: 'Lobster', cursive;
+  color: white;
+}
+
+.address-container span,
+.address-container a {
+  margin-bottom: 0.6rem;
+}
+
+.header-wrapper {
+  height: 3.5rem;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0.9rem;
+}
+
+.header {
+  font-size: 1.2rem;
+  /* line-height: 3.5rem; */
+  font-weight: 500;
+  text-transform: capitalize;
+  color: white;
+}
+
+.input-container {
+  margin: 1em 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  width: 75%;
+  /* max-width: 75%; */
+  font-size: 1.1rem;
+  padding: 0.4em 0.5em;
+  height: 40px;
+  background-color: #818181;
+  border: 2px solid white;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.input:hover,
+.input:focus,
+.btn:focus {
+  outline: none;
+}
+
+.btn {
+  width: 23%;
+  height: 40px;
+  background-color: #edd170;
+  color: black;
+  border: 1px solid white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  cursor: pointer;
+}

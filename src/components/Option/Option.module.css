@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.5em;
+  width: 24%;
+  /* background-color: white; */
+  /* background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%); */
+  background: linear-gradient(to right, #80bdab 0%, #fdf8ac 50%, #ff9595 100%);
+  background-size: 600%;
+  /* border: 1px solid #e8e8e8; */
+  /* border: 1px solid black; */
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.26);
+  /* color: #86738e; */
+  color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+  /* background-color: rgb(236, 236, 236); */
+  animation-name: gradientAnimation;
+  animation-duration: 1.5s;
+}
+
+.active {
+  color: white;
+  /* background: linear-gradient(45deg, #f88686, #f5a8a8); */
+  /* background: linear-gradient(to right, #ffa0a0 5%, #ff9595 95%); */
+  background: linear-gradient(to right, #fdf8ac 50%, #ff9595 100%);
+  background-size: 400%;
+  background-position: 100%;
+  /* background-size: 300%; */
+  padding: 0.8em 0.5em;
+  border: none;
+}
+
+.active:hover {
+  /* background: linear-gradient(45deg, #e76e6e, #df8e8e); */
+  background: linear-gradient(to right, #fff9a3 50%, #fd8888 100%);
+  background-size: 400%;
+  background-position: 100%;
+  animation: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
