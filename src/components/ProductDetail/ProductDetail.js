@@ -1,5 +1,6 @@
-import React from 'react';
-import './ProductDetail.css';
+import React, { useEffect } from 'react';
+// import './ProductDetail.css';
+import styles from './ProductDetail.module.css';
 
 import black from '../../images/black.png';
 import blue from '../../images/blue.png';
@@ -50,38 +51,125 @@ const DATA = [
   },
 ];
 
+let bigImg;
+let smallImgs;
+let sizeBtns;
+let quantity;
+let upBtn;
+let downBtn;
+let currentNumber = 1;
+let colors;
+
+const changeImage = (e) => {
+  let temp = bigImg.src;
+  bigImg.src = e.target.src;
+  e.target.src = temp;
+};
+
+const changeSize = (e) => {
+  let currentSize = document.querySelector(`.${styles['size-active']}`);
+  currentSize.classList.toggle(styles['size-active']);
+  e.target.classList.toggle(styles['size-active']);
+};
+
+const upQuantity = (e) => {
+  console.log('BOOM');
+  currentNumber++;
+  quantity.textContent = currentNumber;
+};
+
+const downQuantity = (e) => {
+  if (currentNumber == 1) {
+    return;
+  }
+  currentNumber--;
+  quantity.textContent = currentNumber;
+};
+
+const changeColor = (e) => {
+  let currentColor = document.querySelector(`.${styles.active}`);
+  // console.log(currentColor);
+  // console.log('click');
+  currentColor.classList.toggle(styles.active);
+  e.target.classList.toggle(styles.active);
+};
+
 const ProductDetail = () => {
+  useEffect(() => {
+    bigImg = document.querySelector(`#${styles['big-image']}`);
+    smallImgs = document.querySelectorAll(`.${styles['small-image']}`);
+    sizeBtns = document.querySelectorAll(`.${styles['size-btn']}`);
+    quantity = document.querySelector(`#${styles.number}`);
+    upBtn = document.querySelector(`#${styles.increase}`);
+    downBtn = document.querySelector(`#${styles.decrease}`);
+    colors = document.querySelectorAll(`.${styles.color}`);
+    // console.log(colors);
+
+    smallImgs.forEach((item) => {
+      item.addEventListener('click', (e) => changeImage(e));
+    });
+
+    sizeBtns.forEach((item) => {
+      item.addEventListener('click', (e) => changeSize(e));
+    });
+
+    upBtn.addEventListener('click', (e) => upQuantity(e));
+
+    downBtn.addEventListener('click', (e) => downQuantity(e));
+
+    colors.forEach((item) => {
+      item.addEventListener('click', (e) => changeColor(e));
+    });
+  }, []);
+
   return (
-    <div className='container'>
-      <div className='detail-container'>
-        <div className='image-container'>
-          <div className='big-image-container'>
-            <img src={black} alt='product-image' />
+    <div className={styles.container}>
+      <div className={styles['detail-container']}>
+        <div className={styles['image-container']}>
+          <div className={styles['big-image-container']}>
+            <img id={styles['big-image']} src={black} alt='product-image' />
           </div>
 
-          <div className='small-image-container'>
-            <div className='small-image-wrapper'>
-              <img src={black} alt='product-image' />
+          <div className={styles['small-image-container']}>
+            <div className={styles['small-image-wrapper']}>
+              <img
+                className={styles['small-image']}
+                src={black}
+                alt='product-image'
+              />
             </div>
 
-            <div className='small-image-wrapper'>
-              <img src={white} alt='product-image' />
+            <div className={styles['small-image-wrapper']}>
+              <img
+                className={styles['small-image']}
+                src={white}
+                alt='product-image'
+              />
             </div>
 
-            <div className='small-image-wrapper'>
-              <img src={blue} alt='product-image' />
+            <div className={styles['small-image-wrapper']}>
+              <img
+                className={styles['small-image']}
+                src={blue}
+                alt='product-image'
+              />
             </div>
 
-            <div className='small-image-wrapper'>
-              <img src={white} alt='product-image' />
+            <div className={styles['small-image-wrapper']}>
+              <img
+                className={styles['small-image']}
+                src={white}
+                alt='product-image'
+              />
             </div>
           </div>
         </div>
-        <div className='info-container'>
-          <h3 className='name'>Black Coat</h3>
 
-          <div className='star-container'>
-            <div className='star'>
+        <div className={styles['info-container']}>
+          <h3 className={styles.name}>Black Coat</h3>
+
+          <div className={styles['star-container']}>
+            <div className={styles.star}>
               <i className='fa fa-star' aria-hidden='true'></i>
               <i className='fa fa-star' aria-hidden='true'></i>
               <i className='fa fa-star' aria-hidden='true'></i>
@@ -89,65 +177,79 @@ const ProductDetail = () => {
               <i className='fa fa-star' aria-hidden='true'></i>
             </div>
 
-            <span className='review-number'>352 Reviews</span>
+            <span className={styles['review-number']}>352 Reviews</span>
           </div>
 
-          <p className='description'>
+          <p className={styles['description']}>
             Classic outerwear. This coat is made from a cotton-blend whith a
             twill quality and is a modern day wardrobe staple.
           </p>
 
-          <div className='size-container'>
-            <h4 className='header'>Size</h4>
+          <div className={styles['size-container']}>
+            <h4 className={styles.header}>Size</h4>
 
-            <div className='size'>
-              <div className='size-btn small'>S</div>
-              <div className='size-btn medium'>M</div>
-              <div className='size-btn large'>L</div>
-              <div className='size-btn xlarge'>XL</div>
+            <div className={styles.size}>
+              <div
+                className={`${styles['size-btn']} ${styles.small} ${styles['size-active']}`}
+              >
+                S
+              </div>
+              <div className={`${styles['size-btn']} ${styles.medium}`}>M</div>
+              <div className={`${styles['size-btn']} ${styles.large}`}>L</div>
+              <div className={`${styles['size-btn']} ${styles.xlarge}`}>XL</div>
             </div>
           </div>
 
-          <div className='color-container'>
-            <h4 className='header'>Color</h4>
+          <div className={styles['color-container']}>
+            <h4 className={styles.header}>Color</h4>
 
-            <div className='colors'>
-              <div className='color black active'></div>
-              <div className='color gray'></div>
-              <div className='color white'></div>
+            <div className={styles.colors}>
+              <div
+                className={`${styles.color} ${styles.black} ${styles.active}`}
+              ></div>
+              <div className={`${styles.color} ${styles.gray}`}></div>
+              <div className={`${styles.color} ${styles.white}`}></div>
             </div>
           </div>
 
-          <div className='quantity-container'>
-            <h4 className='header'>Quantity</h4>
+          <div className={styles['quantity-container']}>
+            <h4 className={styles.header}>Quantity</h4>
 
-            <div className='quantity'>
-              <div className='quantity-btn down'>
+            <div className={styles.quantity}>
+              <div
+                className={`${styles['quantity-btn']} ${styles.down}`}
+                id={styles.decrease}
+              >
                 <i className='fa fa-caret-down'></i>
               </div>
 
-              <span className='number'>1</span>
+              <span className={styles.number} id={styles.number}>
+                1
+              </span>
 
-              <div className='quantity-btn up'>
+              <div
+                className={`${styles['quantity-btn']} ${styles.up}`}
+                id={styles.increase}
+              >
                 <i className='fa fa-caret-up'></i>
               </div>
             </div>
           </div>
 
-          <span className='price'>$30,00</span>
+          <span className={styles.price}>$30,00</span>
 
-          <button className='add-btn'>ADD TO BAG</button>
+          <button className={styles['add-btn']}>ADD TO BAG</button>
         </div>
       </div>
 
-      <div className='divide'></div>
+      <div className={styles.divide}></div>
 
-      <div className='review-container'>
-        <h3 className='review-header'> Reviews from customer</h3>
+      <div className={styles['review-container']}>
+        <h3 className={styles['review-header']}> Reviews from customer</h3>
 
-        <div className='star-overview'>
-          <div className='total-star'>
-            <div className='star'>
+        <div className={styles['star-overview']}>
+          <div className={styles['total-star']}>
+            <div className={styles.star}>
               <i className='fa fa-star' aria-hidden='true'></i>
               <i className='fa fa-star' aria-hidden='true'></i>
               <i className='fa fa-star' aria-hidden='true'></i>
@@ -155,14 +257,14 @@ const ProductDetail = () => {
               <i className='fa fa-star' aria-hidden='true'></i>
             </div>
 
-            <span className='review-number'>352 Reviews</span>
+            <span className={styles['review-number']}>352 Reviews</span>
           </div>
 
-          <div className='divide'></div>
+          <div className={styles.divide}></div>
 
-          <div className='detail-star'>
-            <div className='star-review'>
-              <div className='star'>
+          <div className={styles['detail-star']}>
+            <div className={styles['star-review']}>
+              <div className={styles.star}>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
@@ -170,90 +272,120 @@ const ProductDetail = () => {
                 <i className='fa fa-star' aria-hidden='true'></i>
               </div>
 
-              <div className='bar'></div>
+              <div className={styles.bar}></div>
 
-              <span className='total-number'>335</span>
+              <span className={styles['total-number']}>335</span>
             </div>
 
-            <div className='star-review'>
-              <div className='star'>
+            <div className={styles['star-review']}>
+              <div className={styles.star}>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
               </div>
 
-              <div className='bar'></div>
+              <div className={styles.bar}></div>
 
-              <span className='total-number'>14</span>
+              <span className={styles['total-number']}>14</span>
             </div>
 
-            <div className='star-review'>
-              <div className='star'>
+            <div className={styles['star-review']}>
+              <div className={styles.star}>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
               </div>
 
-              <div className='bar'></div>
+              <div className={styles.bar}></div>
 
-              <span className='total-number'>3</span>
+              <span className={styles['total-number']}>3</span>
             </div>
 
-            <div className='star-review'>
-              <div className='star'>
+            <div className={styles['star-review']}>
+              <div className={styles.star}>
                 <i className='fa fa-star' aria-hidden='true'></i>
                 <i className='fa fa-star' aria-hidden='true'></i>
-                <i className='fa fa-star' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
               </div>
 
-              <div className='bar'></div>
+              <div className={styles.bar}></div>
 
-              <span className='total-number'>0</span>
+              <span className={styles['total-number']}>0</span>
             </div>
 
-            <div className='star-review'>
-              <div className='star'>
+            <div className={styles['star-review']}>
+              <div className={styles.star}>
                 <i className='fa fa-star' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
-                <i className='fa fa-star unactive' aria-hidden='true'></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
+                <i
+                  className={`fa fa-star ${styles.unactive}`}
+                  aria-hidden='true'
+                ></i>
               </div>
 
-              <div className='bar'></div>
+              <div className={styles.bar}></div>
 
-              <span className='total-number'>0</span>
+              <span className={styles['total-number']}>0</span>
             </div>
           </div>
         </div>
 
-        <div className='comments-divide'></div>
+        <div className={styles['comments-divide']}></div>
 
         {DATA.map((item) => {
           const { id, avatar, userName, date, content, like, dislike } = item;
           return (
-            <div className='comments-container' key={id}>
-              <div className='comment'>
-                <div className='avatar-container'>
-                  <div className='avatar-wrapper'>
+            <div className={styles['comments-container']} key={id}>
+              <div className={styles.comment}>
+                <div className={styles['avatar-container']}>
+                  <div className={styles['avatar-wrapper']}>
                     <img src={avatar} alt='avatar' />
                   </div>
-                  <div className='check-icon'>
+                  <div className={styles['check-icon']}>
                     <i className='fa fa-check' aria-hidden='true'></i>
                   </div>
                 </div>
 
-                <div className='text-container'>
-                  <span className='user-name'>{userName}</span>
+                <div className={styles['text-container']}>
+                  <span className={styles['user-name']}>{userName}</span>
 
-                  <div className='user-star'>
-                    <div className='star'>
+                  <div className={styles['user-star']}>
+                    <div className={styles.star}>
                       <i className='fa fa-star' aria-hidden='true'></i>
                       <i className='fa fa-star' aria-hidden='true'></i>
                       <i className='fa fa-star' aria-hidden='true'></i>
@@ -262,7 +394,7 @@ const ProductDetail = () => {
                     </div>
                   </div>
 
-                  <div className='content'>
+                  <div className={styles.content}>
                     {content.map((message, index) => {
                       return <p key={index}>{message}</p>;
                     })}
@@ -271,33 +403,43 @@ const ProductDetail = () => {
                     <p>I will come back in the future</p> */}
                   </div>
 
-                  <div className='bottom-menu'>
-                    <span className='helpful'>Is this review helpful?</span>
+                  <div className={styles['bottom-menu']}>
+                    <span className={styles.helpful}>
+                      Is this review helpful?
+                    </span>
 
-                    <div className='like-container'>
+                    <div className={styles['like-container']}>
                       <i
-                        className='like fa fa-thumbs-up'
+                        className={`${styles.like} like fa fa-thumbs-up`}
                         aria-hidden='true'
                       ></i>
 
-                      <span className='count dislike-count'>{like}</span>
+                      <span
+                        className={`${styles.count} ${styles['dislike-count']}`}
+                      >
+                        {like}
+                      </span>
                     </div>
 
-                    <div className='dislike-container'>
+                    <div className={styles['dislike-container']}>
                       <i
-                        className='dislike fa fa-thumbs-down'
+                        className={`${styles.like} like fa fa-thumbs-down`}
                         aria-hidden='true'
                       ></i>
 
-                      <span className='count dislike-count'>{dislike}</span>
+                      <span
+                        className={`${styles.count} ${styles['like-count']}`}
+                      >
+                        {dislike}
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                <span className='date'>{date}</span>
+                <span className={styles.date}>{date}</span>
               </div>
 
-              <div className='comment-divide'></div>
+              <div className={styles['comment-divide']}></div>
             </div>
           );
         })}
@@ -307,3 +449,11 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+// let bigImg = document.querySelector(styles['#big-image']);
+// let smallImgs = document.querySelectorAll(styles['.small-image']);
+// let bigImg = document.querySelector('#big-image');
+// let smallImgs = document.querySelectorAll('.small-image');
+
+// console.log(bigImg);
+// console.log(smallImgs);

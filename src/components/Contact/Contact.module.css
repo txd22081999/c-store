@@ -1,0 +1,121 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  width: 70%;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.11);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  color: white;
+}
+
+.left {
+  height: 100%;
+  width: 60%;
+  background-image: url(../../images/map.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.right {
+  height: 100%;
+  width: 39%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+}
+
+.header {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.text span {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.text i {
+  font-size: 1.5rem;
+}
+
+.text {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.text:nth-child(2) {
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
+.content .text:nth-child(2) i {
+  color: rgb(104, 228, 104);
+}
+
+.content .text:nth-child(3) i {
+  color: rgb(98, 98, 255);
+}
+
+.content .text:nth-child(4) i {
+  color: #fc5647;
+}
+
+.underlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* top: 50%; */
+  /* left: 50%; */
+  width: 100%;
+  height: 100%;
+  /* height: 80%; */
+  z-index: -2;
+  /* transform: translate(-50%, -50%); */
+  overflow: hidden;
+}
+
+.underlay img {
+  margin-top: -20px;
+  width: 160%;
+  height: auto;
+  filter: brightness(60%) blur(1px);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 660px) {
+  .wrapper {
+    width: 98%;
+  }
+
+  .left {
+    width: 40%;
+  }
+
+  .right {
+    width: 58%;
+  }
+
+  .underlay img {
+    width: 180%;
+  }
+}

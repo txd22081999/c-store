@@ -1,16 +1,17 @@
 import React from 'react';
-import ProductDetail from '../../components/ProductDetail/ProductDetail';
+import './AboutPage.css';
+import About from '../../components/About/About';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
-const ProductDetailPage = () => {
+const AboutPage = () => {
   return (
     <div>
       <Navbar />
-      <ProductDetail />
+      <About />
       <Footer />
     </div>
   );
 };
 
-export default ProductDetailPage;
+export default AboutPage;

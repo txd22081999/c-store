@@ -1,16 +1,16 @@
 import React from 'react';
-import ProductDetail from '../../components/ProductDetail/ProductDetail';
+import Contact from '../../components/Contact/Contact';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
-const ProductDetailPage = () => {
+const ContactPage = () => {
   return (
     <div>
       <Navbar />
-      <ProductDetail />
+      <Contact />
       <Footer />
     </div>
   );
 };
 
-export default ProductDetailPage;
+export default ContactPage;
