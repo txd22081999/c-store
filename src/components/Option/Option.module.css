@@ -22,6 +22,15 @@
   color: white;
 }
 
+#clothing {
+}
+#handbag {
+}
+#hat {
+}
+#shoes {
+}
+
 .btn:hover {
   cursor: pointer;
   /* background-color: rgb(236, 236, 236); */
@@ -39,6 +48,7 @@
   /* background-size: 300%; */
   padding: 0.8em 0.5em;
   border: none;
+  color: black;
 }
 
 .active:hover {

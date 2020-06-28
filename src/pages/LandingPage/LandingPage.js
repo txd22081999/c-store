@@ -14,8 +14,9 @@ const LandingPage = () => {
       <Navbar />
       <Banner />
       <Category />
+      <Section id='id1' type='men' />
       <Deal />
-      <Section />
+      <Section id='id2' type='women' />
       <Gallery />
       <Benefit />
       <Footer />

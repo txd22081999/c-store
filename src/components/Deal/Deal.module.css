@@ -3,6 +3,7 @@
   height: 500px;
   background: linear-gradient(45deg, #6ec2e5, #a3d4e9, #cee7f1, #fafafa);
   margin: auto;
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
