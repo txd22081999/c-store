@@ -19,12 +19,8 @@ function App() {
           <Route exact path='/product' component={ProductDetailPage}></Route>
           <Route exact path='/about' component={AboutPage}></Route>
           <Route exact path='/contact' component={ContactPage}></Route>
+          <Route path='/' component={LandingPage}></Route>
         </Switch>
-        {/* <LandingPage /> */}
-        {/* <ProductsPage /> */}
-        {/* <ProductDetailPage /> */}
-        {/* <AboutPage /> */}
-        {/* <ContactPage /> */}
       </div>
     </Router>
   );
