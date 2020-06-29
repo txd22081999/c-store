@@ -18,6 +18,7 @@ const LandingPage = () => {
       <Deal />
       <Section id='id2' type='women' />
       <Gallery />
+      <Section id='id3' type='kid' />
       <Benefit />
       <Footer />
     </div>

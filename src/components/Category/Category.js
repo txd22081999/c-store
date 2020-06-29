@@ -10,7 +10,10 @@ function Category() {
   return (
     <div className={styles.container}>
       <div className={`${styles.wrapper} ${styles.men}`}>
-        <div className={styles.btn}>
+        <div
+          className={styles.btn}
+          onClick={() => window.open('/products', '_self')}
+        >
           <span>Men's</span>
         </div>
 
@@ -24,7 +27,10 @@ function Category() {
       </div>
 
       <div className={`${styles.wrapper} ${styles.women}`}>
-        <div className={styles.btn}>
+        <div
+          className={styles.btn}
+          onClick={() => window.open('/products', '_self')}
+        >
           <span>Women's</span>
         </div>
 
@@ -38,7 +44,10 @@ function Category() {
       </div>
 
       <div className={`${styles.wrapper} ${styles.kid}`}>
-        <div className={styles.btn}>
+        <div
+          className={styles.btn}
+          onClick={() => window.open('/products', '_self')}
+        >
           <span>Kid's</span>
         </div>
 

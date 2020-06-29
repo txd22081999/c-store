@@ -167,12 +167,12 @@ const Navbar = () => {
 
           <li className={styles.link} id={styles.product} ref={productRef}>
             <a href='#'>Products</a>
-            <div className={styles['icon-dropdown']}>
+            {/* <div className={styles['icon-dropdown']}>
               <i
                 className='icon fa fa-sort-desc dropdown-icon'
                 aria-hidden='true'
               ></i>
-            </div>
+            </div> */}
           </li>
 
           <li className={styles.link} id={styles.about} ref={aboutRef}>

@@ -29,10 +29,18 @@ const Footer = () => {
           <div className={styles['header-wrapper']}>
             <h4 className={styles.header}>information</h4>
           </div>
-          <a className={styles.about} href='#'>
+          <a
+            className={styles.about}
+            href='#'
+            onClick={() => window.open('/about', '_self')}
+          >
             About us
           </a>
-          <a href='#' className={styles.contact}>
+          <a
+            href='#'
+            className={styles.contact}
+            onClick={() => window.open('/contact', '_self')}
+          >
             Contact
           </a>
           <a href='#' className={styles.service}>

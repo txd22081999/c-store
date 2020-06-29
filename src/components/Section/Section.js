@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Section.module.css';
+import Option from '../Option/Option';
 
 import model1 from '../../images/m1.jpg';
 import model2 from '../../images/m2.png';
-import Option from '../Option/Option';
+import model3 from '../../images/m3.png';
+
 import item1 from '../../images/11.png';
 import item2 from '../../images/12.png';
 import item3 from '../../images/13.png';
@@ -30,6 +32,11 @@ import wm1 from '../../images/wm1.png';
 import wm2 from '../../images/wm2.png';
 import wm3 from '../../images/wm3.png';
 import wm4 from '../../images/wm4.png';
+
+import k1 from '../../images/k1.png';
+import k2 from '../../images/k2.png';
+import k3 from '../../images/k3.png';
+import k4 from '../../images/k4.png';
 
 let items;
 
@@ -228,6 +235,41 @@ const WOMEN_CLOTHE_DATA = [
   },
 ];
 
+const KID_CLOTHE_DATA = [
+  {
+    id: '51',
+    name: 'hooded jacket',
+    img: k1,
+    kind: 'jacket',
+    price: '$29,00',
+    stars: 5,
+  },
+  {
+    id: '52',
+    name: 'glittery tulle dress',
+    img: k2,
+    kind: 'dress',
+    price: '$29,00',
+    stars: 5,
+  },
+  {
+    id: '53',
+    name: 'comfort stretch short',
+    img: k3,
+    kind: 'overall',
+    price: '$29,00',
+    stars: 5,
+  },
+  {
+    id: '54',
+    name: 'henley shirt',
+    img: k4,
+    kind: 'shirt',
+    price: '$29,00',
+    stars: 5,
+  },
+];
+
 function Section(props) {
   const { img, category, name, price } = props;
   let index = 0;
@@ -241,6 +283,11 @@ function Section(props) {
   const renderWomenClothes = () => {
     index = 0;
     setDataRender(WOMEN_CLOTHE_DATA);
+  };
+
+  const renderKidClothes = () => {
+    index = 0;
+    setDataRender(KID_CLOTHE_DATA);
   };
 
   const renderBag = () => {
@@ -297,7 +344,7 @@ function Section(props) {
   let model;
 
   if (props.type === 'women') {
-    switchSideClass = `${styles.left} ${styles.switch}`;
+    switchSideClass = `${styles.left} ${styles.switch} ${styles['women-model']}`;
     model = model2;
     containerId = 'id2';
   }
@@ -305,6 +352,11 @@ function Section(props) {
     switchSideClass = `${styles.left}`;
     model = model1;
     containerId = 'id1';
+  }
+  if (props.type === 'kid') {
+    switchSideClass = `${styles.left} ${styles.kid}`;
+    model = model3;
+    containerId = 'id3';
   }
 
   useEffect(() => {
@@ -314,27 +366,16 @@ function Section(props) {
     if (props.type == 'women') {
       setDataRender(WOMEN_CLOTHE_DATA);
     }
-
-    discoverBtn = document.querySelector(`#${styles['discover-btn']}`);
-    productItem = document.querySelector(`.${styles['product']}`);
-    productName = document.querySelector(`.${styles['name']}`);
-
-    discoverBtn.addEventListener('click', () => {
-      window.open('./products', '_self');
-    });
-
-    productItem.addEventListener('click', () => {
-      window.open('./product', '_self');
-    });
-
-    productName.addEventListener('click', () => {
-      window.open('./product', '_self');
-    });
+    if (props.type == 'kid') {
+      setDataRender(KID_CLOTHE_DATA);
+    }
 
     items = document.querySelector(`#${containerId} #carousel`).childNodes;
-    // console.log(items);
-    // console.log(document.querySelector('#id2 #carousel').childNodes);
-    // console.log(`#${containerId} #carousel`);
+
+    discoverBtn = document.querySelector(`#${styles['discover-btn']}`);
+    productItem = document.querySelectorAll(`.${styles['product']}`);
+    productName = document.querySelector(`.${styles['name']}`);
+
     index = 0;
   }, []);
 
@@ -353,6 +394,7 @@ function Section(props) {
             src={product.img}
             alt='product-image'
             className={styles['product']}
+            onClick={() => window.open('./product', '_self')}
           />
         </div>
 
@@ -381,7 +423,11 @@ function Section(props) {
         <div className={`${styles.overlay} ${styles['white-overlay']}`}></div>
 
         <div className={styles['more-wrapper']}>
-          <span className={styles.more} id={styles['discover-btn']}>
+          <span
+            className={styles.more}
+            id={styles['discover-btn']}
+            onClick={() => window.open('/products', '_self')}
+          >
             discover more
           </span>
 
@@ -418,6 +464,7 @@ function Section(props) {
             containerId={`option-${containerId}`}
             renderClothes={() => renderClothes()}
             renderWomenClothes={() => renderWomenClothes()}
+            renderKidClothes={() => renderKidClothes()}
             renderBag={() => renderBag()}
             renderHat={() => renderHat()}
             renderShoes={() => renderShoes()}

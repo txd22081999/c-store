@@ -35,6 +35,11 @@
   transform: scale(1) rotate(-2deg);
 }
 
+.left.women-model:hover img {
+  /* transform: scale(1.15) rotate(-5deg); */
+  transform: scale(1) rotate(2deg);
+}
+
 .right {
   width: 72%;
   height: 90%;
@@ -68,6 +73,7 @@
 
 :root {
   --angle: 15deg;
+  --minus-angle: -15deg;
   --height: 190%;
 }
 
@@ -91,6 +97,23 @@
   transform: rotate(var(--angle)) translate(70%);
 }
 
+.women-model .white-overlay {
+  transform: rotate(var(--minus-angle)) translate(70%);
+}
+
+.women-model .dark-overlay {
+  transform: rotate(var(--minus-angle)) translate(-70%);
+}
+
+.women-model .white-overlay {
+  /* left: unset;
+  right: -200%; */
+}
+
+.women-model .dark-overlay {
+  /* transform: rotate(var(--minus-angle)) translate(70%); */
+}
+
 .more-box {
   position: absolute;
   content: '';
@@ -111,8 +134,6 @@
   font-size: 1.8rem;
   font-weight: 500;
   color: white;
-  /* background-color: rgb(18, 18, 143); */
-  /* padding: 0.5em 3em; */
   transform: rotate(-10deg) translate(-50%, -50%) skew(-10deg);
   top: 50%;
   left: 50%;
@@ -122,6 +143,21 @@
   opacity: 0;
   transition: 0.1s ease-in;
   transition-delay: 0.3s;
+}
+
+.women-model .more-box {
+  transform: rotate(10deg) translate(-50%, -50%) skew(10deg);
+  left: 45%;
+  background-color: #ddbd06;
+}
+
+.women-model .more {
+  transform: rotate(10deg) translate(-50%, -50%) skew(10deg);
+  top: 54%;
+}
+
+.kid .more-box {
+  background-color: #a14b2c;
 }
 
 #discover-btn {
@@ -136,12 +172,17 @@
   opacity: 100%;
 }
 
-.left:hover .white-overlay {
+.left:hover .white-overlay,
+.left:hover .dark-overlay {
   transform: rotate(var(--angle)) translate(0%);
 }
 
-.left:hover .dark-overlay {
-  transform: rotate(var(--angle)) translate(0%);
+.left.women-model:hover .dark-overlay {
+  transform: rotate(var(--minus-angle)) translate(0%);
+}
+
+.left.women-model:hover .white-overlay {
+  transform: rotate(var(--minus-angle)) translate(7%);
 }
 
 .carousel {

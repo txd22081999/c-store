@@ -4,6 +4,8 @@
   background-image: radial-gradient(#606c88d3, #3f4c6bd5);
   color: white;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid-container {
@@ -11,8 +13,32 @@
   grid-template-columns: 1.6fr 0.5fr 0.5fr 1.4fr;
   grid-template-areas: 'address info account email';
   width: 95%;
-  margin: 4em auto 0;
+  /* margin: 4em auto 0; */
   grid-gap: 1.5em;
+}
+
+@media (max-width: 1150px) {
+  /* .input-container {
+    width: 70%;
+  } */
+  .grid-container {
+    /* flex-wrap: wrap; */
+    /* grid-template-rows: 2;
+    grid-template-areas:
+      'address info'
+      'account email'; */
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
+    grid-template-rows: 2;
+    grid-template-areas:
+      'address info'
+      'account email';
+  }
 }
 
 .container a {
@@ -140,7 +166,7 @@
 }
 
 .btn {
-  width: 23%;
+  width: 100px;
   height: 40px;
   background-color: #edd170;
   color: black;

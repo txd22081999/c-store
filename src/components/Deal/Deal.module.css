@@ -10,7 +10,17 @@
   padding: auto;
   position: relative;
   box-shadow: rgb(133, 133, 133) 2px 2px 6px;
+  /* animation: blurAnim 0.75s ease-in; */
 }
+
+/* @keyframes blurAnim {
+  0% {
+    filter: blur(2px);
+  }
+  100% {
+    filter: blur(0);
+  }
+} */
 
 .text {
   width: 40%;
@@ -18,6 +28,23 @@
 
 .img-container {
   width: 50%;
+}
+
+.img-container:hover img {
+  animation: rotate-animation 6s linear infinite;
+  /* transform: rotate(45deg); */
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 .header {
@@ -159,6 +186,15 @@
   justify-content: start;
 }
 
+#day {
+}
+#hour {
+}
+#min {
+}
+#sec {
+}
+
 .shop-btn {
   background-color: #e76d71;
   border-radius: 20px;
@@ -169,6 +205,11 @@
   border: none;
   box-shadow: rgba(0, 0, 0, 0.445) 3px 3px;
   border: 1px solid #7b7b7b;
+  transition: 0.2s ease-in;
+}
+
+.shop-btn:hover {
+  background-color: #e43f44;
 }
 
 .shop-btn:hover,

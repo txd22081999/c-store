@@ -11,11 +11,13 @@ let activeBtn;
 
 let isMen;
 let isWomen;
+let isKid;
 
 const Option = (props) => {
   // #${containerId}
   const [defaultActiveMen, setDefaultActiveMen] = useState(true);
   const [defaultActiveWomen, setDefaultActiveWomen] = useState(true);
+  const [defaultActiveKid, setDefaultActiveKid] = useState(true);
 
   let id;
   id = props.containerId;
@@ -23,6 +25,7 @@ const Option = (props) => {
   useEffect(() => {
     isMen = id.includes('id1');
     isWomen = id.includes('id2');
+    isKid = id.includes('id3');
 
     clotheBtn = document.querySelector(`#${id} #${styles.clothing}`);
     bagBtn = document.querySelector(`#${id} #${styles.handbag}`);
@@ -38,6 +41,9 @@ const Option = (props) => {
       }
       if (isWomen) {
         props.renderWomenClothes();
+      }
+      if (isKid) {
+        props.renderKidClothes();
       }
     });
 
@@ -71,6 +77,10 @@ const Option = (props) => {
     if (id.includes('id2') && defaultActiveWomen == true) {
       setDefaultActiveWomen(false);
     }
+
+    if (id.includes('id3') && defaultActiveKid == true) {
+      setDefaultActiveKid(false);
+    }
   };
 
   const getActiveClass = (id) => {
@@ -78,20 +88,24 @@ const Option = (props) => {
     // console.log(id.includes('men'));
     if (id.includes('id1')) {
       if (defaultActiveMen) {
-        console.log('DEFAULT MEN');
         return `${styles.btn} ${styles.active}`;
       } else {
-        console.log('NOT DEFAULT MEN');
         return `${styles.btn}`;
       }
     }
 
     if (id.includes('id2')) {
       if (defaultActiveWomen) {
-        console.log('DEFAULT WOMEN');
         return `${styles.btn} ${styles.active}`;
       } else {
-        console.log('NOT DEFAULT WOMEN');
+        return `${styles.btn}`;
+      }
+    }
+
+    if (id.includes('id3')) {
+      if (defaultActiveKid) {
+        return `${styles.btn} ${styles.active}`;
+      } else {
         return `${styles.btn}`;
       }
     }

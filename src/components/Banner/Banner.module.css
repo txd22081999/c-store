@@ -7,6 +7,16 @@
   align-items: center;
   overflow: hidden;
   margin-top: 2em;
+  animation: fade-in 1s ease-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .woman-img-container {
@@ -56,6 +66,11 @@
   margin-top: 1.5em;
   box-shadow: rgba(0, 0, 0, 0.445) 3px 3px;
   border: 1px solid #7b7b7b;
+  transition: 0.2s ease-in;
+}
+
+.shop-btn:hover {
+  background-color: #6e13ff;
 }
 
 .shop-btn:hover,
