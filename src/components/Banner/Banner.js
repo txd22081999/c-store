@@ -19,7 +19,12 @@ function Banner() {
         <p className={styles.description}>
           let’s build a wardrobe that’s always got your back.
         </p>
-        <button className={styles['shop-btn']}>Shop now</button>
+        <button
+          className={styles['shop-btn']}
+          onClick={() => window.open('/products', '_self')}
+        >
+          Shop now
+        </button>
       </div>
 
       <div className={styles['man-img-container']}>

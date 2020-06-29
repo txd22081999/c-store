@@ -123,7 +123,12 @@ const Deal = () => {
         </div>
 
         <div className={styles['btn-container']}>
-          <button className={styles['shop-btn']}>Shop now</button>
+          <button
+            className={styles['shop-btn']}
+            onClick={() => window.open('/product', '_self')}
+          >
+            Shop now
+          </button>
         </div>
       </div>
 

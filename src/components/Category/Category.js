@@ -12,7 +12,7 @@ function Category() {
       <div className={`${styles.wrapper} ${styles.men}`}>
         <div
           className={styles.btn}
-          onClick={() => window.open('/products', '_self')}
+          onClick={() => window.open('./products', '_self')}
         >
           <span>Men's</span>
         </div>

@@ -45,7 +45,10 @@ const ProductItem = ({ id, img, stampImg }) => {
 
         <img className={styles['product-img']} src={img} alt='product' />
 
-        <div className={styles.overlay}></div>
+        <div
+          className={styles.overlay}
+          onClick={() => window.open('/product', '_self')}
+        ></div>
 
         <span className={styles.view}>Quick view</span>
 

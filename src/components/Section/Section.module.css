@@ -169,7 +169,7 @@
 
 .left:hover .more,
 .left:hover .more-box {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .left:hover .white-overlay,

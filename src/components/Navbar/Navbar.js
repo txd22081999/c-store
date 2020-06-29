@@ -155,7 +155,10 @@ const Navbar = () => {
   return (
     <div className={styles.container} id='navbar-container'>
       {/* <p className={styles['brand-name']}>C-Store</p> */}
-      <div className={styles['brand-container']}>
+      <div
+        className={styles['brand-container']}
+        onClick={() => window.open('/home', '_self')}
+      >
         <span className={styles['brand-name']}>C-Store</span>
       </div>
 
