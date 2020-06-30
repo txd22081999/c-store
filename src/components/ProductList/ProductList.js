@@ -1,13 +1,20 @@
 import React, { useEffect } from 'react';
 import styles from './ProductList.module.css';
+import FilterSlider from '../FilterSlider/FilterSlider';
+import ProductItem from '../ProductItem/ProductItem';
 
 import item1 from '../../images/14.png';
 import item2 from '../../images/12.png';
 import item3 from '../../images/13.png';
 import stamp1 from '../../images/exclusive.png';
 import stamp2 from '../../images/sold-out.png';
-import FilterSlider from '../FilterSlider/FilterSlider';
-import ProductItem from '../ProductItem/ProductItem';
+
+import item4 from '../../images/pd4.png';
+import item5 from '../../images/pd5.png';
+import item6 from '../../images/pd6.png';
+import item7 from '../../images/pd7.png';
+import item8 from '../../images/pd8.png';
+import item9 from '../../images/pd9.png';
 
 const openFilterBox = (e) => {
   let filterBox = document.querySelector(`.${styles['filter-box']}`);
@@ -55,21 +62,101 @@ const handleDropdown = (e) => {
 const ITEM_LIST = [
   {
     id: 1,
+    name: 'rivet heaps collar',
+    price: '39,00',
     img: item1,
     stamp: stamp1,
+    colors: [
+      { id: 11, color: 'gray' },
+      { id: 21, color: 'black' },
+      { id: 31, color: 'brown' },
+    ],
   },
   {
     id: 2,
+    name: 'white coat',
+    price: '34,00',
     img: item2,
+    colors: [
+      { id: 11, color: 'white' },
+      { id: 12, color: 'gray' },
+    ],
   },
   {
     id: 3,
     img: item3,
+    name: 'modern business',
+    price: '49,00',
     stamp: stamp2,
+    colors: [
+      { id: 11, color: 'gray' },
+      { id: 12, color: 'black' },
+    ],
   },
   {
     id: 4,
-    img: item2,
+    img: item4,
+    name: 'lightweight shelled jacket',
+    price: '49,00',
+    colors: [
+      { id: 11, color: 'brown' },
+      { id: 12, color: 'gray' },
+    ],
+  },
+  {
+    id: 5,
+    img: item5,
+    name: 'classic Retro-X',
+    price: '49,00',
+    colors: [
+      { id: 11, color: 'yellow' },
+      { id: 12, color: 'gray' },
+    ],
+  },
+  {
+    id: 6,
+    img: item6,
+    name: 'synchilla Snap-T Pullover',
+    price: '49,00',
+    colors: [
+      { id: 11, color: 'blue' },
+      { id: 12, color: 'gray' },
+      { id: 13, color: 'black' },
+    ],
+  },
+  {
+    id: 7,
+    img: item7,
+    name: 'micropuff hoody',
+    price: '49,00',
+    colors: [
+      { id: 11, color: 'orange' },
+      { id: 12, color: 'gray' },
+      { id: 13, color: 'black' },
+      { id: 14, color: 'red' },
+      { id: 14, color: 'blue' },
+    ],
+  },
+  {
+    id: 8,
+    img: item8,
+    name: 'Snap-T fleece pullover',
+    price: '49,00',
+    colors: [
+      { id: 11, color: 'white' },
+      { id: 12, color: 'gray' },
+      { id: 13, color: 'black' },
+    ],
+  },
+  {
+    id: 9,
+    img: item9,
+    name: 'Iron Forge Hemp',
+    price: '49,00',
+    colors: [
+      { id: 11, color: 'brown' },
+      { id: 12, color: 'black' },
+    ],
   },
 ];
 
@@ -94,7 +181,7 @@ const ProductList = () => {
 
         <div className={styles['tag-container']}>
           <div className={styles['tag-wrapper']}>
-            <span className={styles.tag}>#green</span>
+            <span className={styles.tag}>#jacket</span>
             <i className={`${styles.cross} fa fa-times`} aria-hidden='true'></i>
           </div>
 
@@ -129,7 +216,14 @@ const ProductList = () => {
       <div className={styles['product-list']}>
         {ITEM_LIST.map((item) => {
           return (
-            <ProductItem id={item.id} img={item.img} stampImg={item.stamp} />
+            <ProductItem
+              id={item.id}
+              name={item.name}
+              price={item.price}
+              img={item.img}
+              stampImg={item.stamp}
+              colorArr={item.colors}
+            />
           );
         })}
         {/* <ProductItem />

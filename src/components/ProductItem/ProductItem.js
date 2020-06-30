@@ -7,7 +7,7 @@ import item3 from '../../images/13.png';
 import stamp1 from '../../images/exclusive.png';
 import stamp2 from '../../images/sold-out.png';
 
-const ProductItem = ({ id, img, stampImg }) => {
+const ProductItem = ({ id, img, stampImg, colorArr, name, price }) => {
   const selectColor = (e) => {
     const product = document.querySelector(`.item-id-${id}`);
     const children = product.childNodes;
@@ -62,7 +62,38 @@ const ProductItem = ({ id, img, stampImg }) => {
       </div>
 
       <div className={`${styles.colors} colors-item-id-${id}`}>
-        <div
+        {colorArr.map((item, index) => {
+          const { id, color } = item;
+          let element;
+
+          if (index === 0) {
+            element = (
+              <div
+                className={`item-${item.id} ${styles.color} ${
+                  styles[`${item.color}`]
+                } ${styles.active}`}
+                onClick={(e) => selectColor(e)}
+                key={item.id}
+              ></div>
+            );
+          } else {
+            element = (
+              <div
+                className={`item-${item.id}  ${styles.color} ${
+                  styles[`${item.color}`]
+                }`}
+                onClick={(e) => selectColor(e)}
+                key={item.id}
+              ></div>
+            );
+          }
+
+          // console.log(element);
+          return element;
+        })}
+
+        {/* Color circle */}
+        {/* <div
           className={`${styles.color} ${styles.gray}`}
           onClick={(e) => selectColor(e)}
         ></div>
@@ -73,12 +104,12 @@ const ProductItem = ({ id, img, stampImg }) => {
         <div
           className={`${styles.color} ${styles.brown}`}
           onClick={(e) => selectColor(e)}
-        ></div>
+        ></div> */}
       </div>
 
-      <span className={styles.name}>rivet heaps collar</span>
+      <span className={styles.name}>{name}</span>
 
-      <span className={styles.price}>$30,00</span>
+      <span className={styles.price}>{price}</span>
     </div>
   );
 };
