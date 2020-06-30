@@ -39,6 +39,10 @@
   margin-left: 0.5em;
 }
 
+.brand-name:hover {
+  cursor: pointer;
+}
+
 /* nav link*/
 .navbar {
   width: 50%;

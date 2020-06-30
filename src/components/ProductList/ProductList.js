@@ -352,6 +352,7 @@ const ProductList = () => {
             onClick={(e) => closeFilter(e)}
           ></i>
         </div>
+
         <div className={styles['filter-header-container']}>
           <p className={styles['filter-header']}>Color</p>
           <i
@@ -416,6 +417,9 @@ const ProductList = () => {
         <div className={styles['filter-container']} id={styles['price-box']}>
           <FilterSlider containerWidth='100' />
         </div>
+        <button className={styles.apply} onClick={(e) => closeFilter(e)}>
+          APPLY
+        </button>
       </div>
 
       <div className={styles['page-overlay']}></div>

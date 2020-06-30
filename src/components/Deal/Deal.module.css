@@ -35,6 +35,11 @@
   /* transform: rotate(45deg); */
 }
 
+.pair {
+  font-size: 1.2rem;
+  color: white;
+}
+
 @keyframes rotate-animation {
   0% {
     transform: rotate(0) translateX(0);

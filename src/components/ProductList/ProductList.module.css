@@ -166,7 +166,7 @@
 .filter-box {
   position: absolute;
   width: 25%;
-  height: 600px;
+  height: 650px;
   left: 0;
   top: 45px;
   background-color: white;
@@ -457,4 +457,27 @@ button.large {
 .expand-size {
 }
 .expand-price {
+}
+
+.apply {
+  padding: 0.5em 1em;
+  background-color: #53e41f;
+  border-radius: 10px;
+  font-size: 1rem;
+  border: none;
+  margin: 0 auto;
+  color: white;
+  font-weight: 500;
+  display: block;
+  margin-top: 1rem;
+}
+
+.apply:hover {
+  cursor: pointer;
+  background-color: #45b91b;
+  outline: none;
+}
+
+.apply:focus {
+  outline: none;
 }

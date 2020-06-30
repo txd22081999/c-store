@@ -6,7 +6,7 @@ import buttonStyle from '../Banner/Banner.module.css';
 
 import styles from '../Deal/Deal.module.css';
 
-let deadline = new Date('jun 30, 2020 23:59:59').getTime();
+let deadline = new Date('jul 5, 2020 23:59:59').getTime();
 console.log(deadline);
 
 let now, t, days, hours, minutes, seconds;
@@ -80,7 +80,7 @@ const Deal = () => {
 
         <div className={styles['cost-container']}>
           <span className={styles.cost}>$195.00</span>
-          <span className={styles.pair}>/pair</span>
+          <span className={styles.pair}>/ pair</span>
         </div>
 
         <div className={styles['time-wrapper']}>

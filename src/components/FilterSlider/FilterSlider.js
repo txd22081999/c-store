@@ -154,6 +154,8 @@ const FilterSlider = ({ containerWidth }) => {
       <p className={styles.to}>
         To: <span>{`$${toValue}`}</span>
       </p>
+
+      {/* <button className={styles.apply}>APPLY</button> */}
     </div>
   );
 };
