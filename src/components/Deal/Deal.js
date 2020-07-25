@@ -6,7 +6,7 @@ import buttonStyle from '../Banner/Banner.module.css';
 
 import styles from '../Deal/Deal.module.css';
 
-let deadline = new Date('jul 5, 2020 23:59:59').getTime();
+let deadline = new Date('jul 26, 2020 23:59:59').getTime();
 console.log(deadline);
 
 let now, t, days, hours, minutes, seconds;
