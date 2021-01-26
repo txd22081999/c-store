@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import nike from '../../images/nike.png';
-import pattern from '../../images/pattern2.png';
-import buttonStyle from '../Banner/Banner.module.css';
+import nike from "../../images/nike.png";
+import pattern from "../../images/pattern2.png";
+import buttonStyle from "../Banner/Banner.module.css";
 
-import styles from '../Deal/Deal.module.css';
+import styles from "../Deal/Deal.module.css";
 
-let deadline = new Date('jul 26, 2020 23:59:59').getTime();
+let deadline = new Date("jan 30, 2021 23:59:59").getTime();
 console.log(deadline);
 
 let now, t, days, hours, minutes, seconds;
@@ -48,7 +48,7 @@ const Deal = () => {
   }, []);
 
   useEffect(() => {
-    console.log('render');
+    console.log("render");
     dayEl = document.querySelector(`#${styles.day}`);
     hourEl = document.querySelector(`#${styles.hour}`);
     minEl = document.querySelector(`#${styles.min}`);
@@ -63,7 +63,7 @@ const Deal = () => {
   return (
     <div className={styles.container}>
       <div className={styles.pattern}>
-        <img src={pattern} alt='pattern' />
+        <img src={pattern} alt="pattern" />
       </div>
 
       <div className={styles.text}>
@@ -74,17 +74,17 @@ const Deal = () => {
           C-Store.
         </p>
 
-        <div className={styles['old-cost-container']}>
+        <div className={styles["old-cost-container"]}>
           <span className={`${styles.cost} ${styles.old}`}>$295.00</span>
         </div>
 
-        <div className={styles['cost-container']}>
+        <div className={styles["cost-container"]}>
           <span className={styles.cost}>$195.00</span>
           <span className={styles.pair}>/ pair</span>
         </div>
 
-        <div className={styles['time-wrapper']}>
-          <div className={styles['time-container']}>
+        <div className={styles["time-wrapper"]}>
+          <div className={styles["time-container"]}>
             <div className={styles.item}>
               <div className={`${styles.circle}`}>
                 <span className={styles.content} id={styles.day}>
@@ -122,18 +122,18 @@ const Deal = () => {
           </div>
         </div>
 
-        <div className={styles['btn-container']}>
+        <div className={styles["btn-container"]}>
           <button
-            className={styles['shop-btn']}
-            onClick={() => window.open('/product', '_self')}
+            className={styles["shop-btn"]}
+            onClick={() => window.open("/product", "_self")}
           >
             Shop now
           </button>
         </div>
       </div>
 
-      <div className={styles['img-container']}>
-        <img src={nike} alt='nike' />
+      <div className={styles["img-container"]}>
+        <img src={nike} alt="nike" />
       </div>
     </div>
   );
