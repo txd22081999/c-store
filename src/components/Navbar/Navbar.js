@@ -131,6 +131,7 @@ const Navbar = () => {
   const stretch = (el) => {
     if (el === 'home') {
       setLineWidth(homeWidth);
+      console.log(homeRef.current.offsetLeft);
       setLineOffset(homeRef.current.offsetLeft);
     }
     if (el === 'product') {

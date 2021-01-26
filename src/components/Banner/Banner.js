@@ -8,7 +8,7 @@ function Banner() {
   return (
     <div className={styles.container} id='banner'>
       <div className={styles['woman-img-container']}>
-        <img className='model' src={woman} alt='woman model' />
+        <img className={styles.model} src={woman} alt='woman model' />
       </div>
 
       <div className={styles.text}>

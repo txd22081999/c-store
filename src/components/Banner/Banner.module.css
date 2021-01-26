@@ -34,7 +34,7 @@
 }
 
 .model {
-  max-width: 100%;
+  /* max-width: 100%; */
   height: 402px;
   margin-top: 5px;
 }
@@ -77,4 +77,15 @@
 .shop-btn:focus {
   outline: none;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .header {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
 }

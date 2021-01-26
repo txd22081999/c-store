@@ -81,3 +81,29 @@ svg {
 .quality .right {
   width: 79%;
 }
+
+@media (max-width: 800px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container > div {
+    flex-basis: 48%;
+  }
+
+  .container > div:nth-child(3),
+  .container > div:nth-child(4) {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    justify-content: center;
+  }
+  .container > div {
+    flex-basis: 60%;
+    margin: 0 !important;
+    margin-bottom: 20px !important;
+  }
+}

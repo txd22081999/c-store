@@ -14,6 +14,7 @@
 
 .left {
   width: 25%;
+  min-width: 250px;
   height: 90%;
   position: relative;
   overflow: hidden;
@@ -50,7 +51,7 @@
 }
 
 .option-container {
-  width: 50%;
+  width: 420px;
 }
 
 /* .overlay {
@@ -230,12 +231,10 @@
 }
 
 .img-container img {
-  /* margin-top: auto; */
   width: 90%;
   max-width: 100%;
   height: auto;
-  /* width: auto;
-  max-height: 100%; */
+  min-width: 200px;
   /* box-shadow: 2px 2px black; */
   -webkit-filter: drop-shadow(3px 3px 3px #575757);
   filter: drop-shadow(3px 3px 3px #575757);
@@ -325,3 +324,27 @@
 /* .left:hover .overlay {
   opacity: 0.3;
 } */
+
+@media (max-width: 1000px) {
+  .item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  .item {
+    /* width: 100%; */
+  }
+  .left {
+    display: none;
+  }
+  .right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .item {
+    width: 100%;
+  }
+}

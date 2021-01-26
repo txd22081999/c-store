@@ -5,7 +5,7 @@
   margin: 1rem 0 1rem 0;
   top: 0;
   left: 0;
-  transition: 0.2s ease-in;
+  /* transition: 0.2s ease-in; */
   z-index: 100;
   background-color: transparent;
   /* animation: fade-in 2s ease-in; */
@@ -45,13 +45,13 @@
 
 /* nav link*/
 .navbar {
-  width: 50%;
+  width: 40%;
   display: flex;
   position: relative;
 }
 
 .option-container {
-  width: 30%;
+  width: 40%;
   height: 100%;
 }
 
@@ -59,9 +59,11 @@
   display: flex;
   list-style: none;
   margin: auto;
-  width: 70%;
+  width: 100%;
+  /* min-width: 380px; */
+  /* max-width: 100%; */
   height: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
 }
@@ -70,12 +72,16 @@
   position: absolute;
   left: 0;
   right: 0;
-  width: 70%;
+  width: 100%;
   height: 100%;
   /* background-color: rgba(0, 0, 0, 0.096); */
   margin: auto;
   z-index: -1;
 }
+
+/* .link {
+  display: ;
+} */
 
 #line {
   position: absolute;
@@ -139,13 +145,16 @@
 .option-container {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .options {
   width: 80%;
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .cart {
@@ -201,5 +210,17 @@
   }
   to {
     width: -100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    display: none;
+  }
+  .brand-container {
+    width: 30%;
+  }
+  .option-container {
+    width: 70%;
   }
 }

@@ -28,6 +28,7 @@
 
 .img-container {
   width: 50%;
+  min-width: 350px;
 }
 
 .img-container:hover img {
@@ -228,4 +229,39 @@
   margin-left: auto;
   display: flex;
   justify-content: start;
+}
+
+@media (max-width: 960px) {
+  .header {
+    /* display: none; */
+    font-size: 1.8rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  * {
+    /* display: none; */
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    padding: 0 20px;
+  }
+  .img-container {
+    display: none;
+  }
+  .header {
+    text-align: center;
+    display: block;
+  }
+  .text {
+    width: 100%;
+  }
+  /* .text {
+    width: 70%;
+  }
+  .img-container {
+    width: 30%;
+  } */
 }
