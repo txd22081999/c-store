@@ -52,9 +52,9 @@ const Navbar = () => {
     search = document.querySelector(`#${styles['search-btn']}`);
     input = document.querySelector(`#${styles['input-field']}`);
 
-    search.addEventListener('click', () => {
-      console.log(input);
-    });
+    // search.addEventListener('click', () => {
+    //   console.log(input);
+    // });
 
     // Width of nav link
     homeWidth = homeRef.current.offsetWidth;
