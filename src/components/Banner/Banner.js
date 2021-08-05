@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from './Banner.module.css';
+import React from 'react'
+import man from '../../images/man.png'
+import woman from '../../images/woman.png'
 
-import man from '../../images/man.png';
-import woman from '../../images/woman.png';
+import styles from './Banner.module.css'
 
-function Banner() {
+const Banner = ({ history }) => {
   return (
     <div className={styles.container} id='banner'>
       <div className={styles['woman-img-container']}>
@@ -21,7 +21,7 @@ function Banner() {
         </p>
         <button
           className={styles['shop-btn']}
-          onClick={() => window.open('/products', '_self')}
+          onClick={() => history.push('/products')}
         >
           Shop now
         </button>
@@ -31,7 +31,7 @@ function Banner() {
         <img className={styles.model} src={man} alt='man model' />
       </div>
     </div>
-  );
+  )
 }
 
-export default Banner;
+export default Banner

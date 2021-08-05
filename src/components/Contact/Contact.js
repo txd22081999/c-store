@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './Contact.module.css';
+import React from 'react'
+import styles from './Contact.module.css'
 
-import map from '../../images/map.jpg';
+import map from '../../images/map.jpg'
 
 const Contact = () => {
   return (
@@ -18,10 +18,10 @@ const Contact = () => {
               <span>0943.176.152</span>
             </div>
 
-            <div className={styles.text}>
+            {/* <div className={styles.text}>
               <i className='fa fa-facebook' aria-hidden='true'></i>
               <span>fb.com/profile.php?id=100005652588055</span>
-            </div>
+            </div> */}
 
             <div className={styles.text}>
               <i className='fa fa-envelope' aria-hidden='true'></i>
@@ -35,7 +35,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

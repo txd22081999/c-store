@@ -1,63 +1,63 @@
-import React, { useEffect } from 'react';
-import styles from './ProductList.module.css';
-import FilterSlider from '../FilterSlider/FilterSlider';
-import ProductItem from '../ProductItem/ProductItem';
+import React, { useEffect } from 'react'
+import styles from './ProductList.module.css'
+import FilterSlider from '../FilterSlider/FilterSlider'
+import ProductItem from '../ProductItem/ProductItem'
 
-import item1 from '../../images/14.png';
-import item2 from '../../images/12.png';
-import item3 from '../../images/13.png';
-import stamp1 from '../../images/exclusive.png';
-import stamp2 from '../../images/sold-out.png';
+import item1 from '../../images/14.png'
+import item2 from '../../images/12.png'
+import item3 from '../../images/13.png'
+import stamp1 from '../../images/exclusive.png'
+import stamp2 from '../../images/sold-out.png'
 
-import item4 from '../../images/pd4.png';
-import item5 from '../../images/pd5.png';
-import item6 from '../../images/pd6.png';
-import item7 from '../../images/pd7.png';
-import item8 from '../../images/pd8.png';
-import item9 from '../../images/pd9.png';
+import item4 from '../../images/pd4.png'
+import item5 from '../../images/pd5.png'
+import item6 from '../../images/pd6.png'
+import item7 from '../../images/pd7.png'
+import item8 from '../../images/pd8.png'
+import item9 from '../../images/pd9.png'
 
 const openFilterBox = (e) => {
-  let filterBox = document.querySelector(`.${styles['filter-box']}`);
-  let pageOverlay = document.querySelector(`.${styles['page-overlay']}`);
-  pageOverlay.classList.toggle(styles['display-block']);
-  pageOverlay.classList.toggle(styles.appear);
-  filterBox.classList.toggle(styles['slide-in']);
-};
+  let filterBox = document.querySelector(`.${styles['filter-box']}`)
+  let pageOverlay = document.querySelector(`.${styles['page-overlay']}`)
+  pageOverlay.classList.toggle(styles['display-block'])
+  pageOverlay.classList.toggle(styles.appear)
+  filterBox.classList.toggle(styles['slide-in'])
+}
 
 const openSortBox = (e) => {
-  let sortBox = document.querySelector(`.${styles['sort-box']}`);
-  sortBox.classList.toggle(styles['display-flex']);
-};
+  let sortBox = document.querySelector(`.${styles['sort-box']}`)
+  sortBox.classList.toggle(styles['display-flex'])
+}
 
 const closeFilter = (e) => {
-  let filterBox = document.querySelector(`.${styles['filter-box']}`);
-  let pageOverlay = document.querySelector(`.${styles['page-overlay']}`);
-  pageOverlay.classList.toggle(styles.appear);
-  pageOverlay.classList.toggle(styles['display-block']);
-  filterBox.classList.toggle(styles['slide-in']);
-};
+  let filterBox = document.querySelector(`.${styles['filter-box']}`)
+  let pageOverlay = document.querySelector(`.${styles['page-overlay']}`)
+  pageOverlay.classList.toggle(styles.appear)
+  pageOverlay.classList.toggle(styles['display-block'])
+  filterBox.classList.toggle(styles['slide-in'])
+}
 
 const handleDropdown = (e) => {
-  e.target.classList.toggle(styles['drop-btn']);
+  e.target.classList.toggle(styles['drop-btn'])
 
-  let classList = String(e.target.classList.value);
-  const isColorBtn = classList.includes(styles['expand-color']);
-  const isSizeBtn = classList.includes(styles['expand-size']);
-  const isPriceBtn = classList.includes(styles['expand-price']);
+  let classList = String(e.target.classList.value)
+  const isColorBtn = classList.includes(styles['expand-color'])
+  const isSizeBtn = classList.includes(styles['expand-size'])
+  const isPriceBtn = classList.includes(styles['expand-price'])
 
   if (isColorBtn) {
-    let colors = document.querySelector(`#${styles['filter-color-box']}`);
-    colors.classList.toggle(styles['display-flex']);
+    let colors = document.querySelector(`#${styles['filter-color-box']}`)
+    colors.classList.toggle(styles['display-flex'])
   }
   if (isSizeBtn) {
-    let size = document.querySelector(`#${styles['size-box']}`);
-    size.classList.toggle(styles['display-flex']);
+    let size = document.querySelector(`#${styles['size-box']}`)
+    size.classList.toggle(styles['display-flex'])
   }
   if (isPriceBtn) {
-    let price = document.querySelector(`#${styles['price-box']}`);
-    price.classList.toggle(styles['display-block']);
+    let price = document.querySelector(`#${styles['price-box']}`)
+    price.classList.toggle(styles['display-block'])
   }
-};
+}
 
 const ITEM_LIST = [
   {
@@ -158,12 +158,12 @@ const ITEM_LIST = [
       { id: 12, color: 'black' },
     ],
   },
-];
+]
 
-const ProductList = () => {
+const ProductList = (props) => {
   useEffect(() => {
     // // let product = document.query
-  }, []);
+  }, [])
 
   return (
     <div className={styles.container} id='product-list'>
@@ -217,6 +217,7 @@ const ProductList = () => {
         {ITEM_LIST.map((item) => {
           return (
             <ProductItem
+              {...props}
               id={item.id}
               name={item.name}
               price={item.price}
@@ -224,123 +225,8 @@ const ProductList = () => {
               stampImg={item.stamp}
               colorArr={item.colors}
             />
-          );
+          )
         })}
-        {/* <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem /> */}
-        {/* <div className='item'>
-          <div className='img-container'>
-            <img className='product-img' src={item1} alt='product' />
-
-            <div className='overlay'></div>
-
-            <span className='view'>Quick view</span>
-
-            <div className='star'>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-            </div>
-          </div>
-
-          <div className='colors'>
-            <div className='color gray'></div>
-            <div className='color black active'></div>
-            <div className='color brown'></div>
-          </div>
-
-          <span className='name'>rivet heaps collar</span>
-
-          <span className='price'>$30,00</span>
-        </div> */}
-
-        {/* <div className='item'>
-          <div className='img-container'>
-            <div className='stamp'>
-              <img src={stamp1} alt='exclusive' />
-            </div>
-            <img className='product-img' src={item2} alt='product' />
-
-            <div className='overlay'></div>
-
-            <span className='view'>Quick view</span>
-
-            <div className='star'>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-            </div>
-          </div>
-
-          <div className='colors'>
-            <div className='color white active'></div>
-            <div className='color black blue'></div>
-          </div>
-
-          <span className='name'>rivet heaps collar</span>
-
-          <span className='price'>$30,00</span>
-        </div> */}
-
-        {/* <div className='item'>
-          <div className='img-container'>
-            <div className='stamp'>
-              <img src={stamp2} alt='sold-out' />
-            </div>
-
-            <img className='product-img' src={item3} alt='product' />
-
-            <div className='overlay'></div>
-
-            <span className='view'>Quick view</span>
-
-            <div className='star'>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-            </div>
-          </div>
-
-          <div className='colors'>
-            <div className='color gray active'></div>
-            <div className='color brown'></div>
-          </div>
-
-          <span className='name'>rivet heaps collar</span>
-
-          <span className='price'>$30,00</span>
-        </div> */}
-
-        {/* <div className='item'>
-          <div className='img-container'>
-            <img className='product-img' src={item2} alt='product' />
-
-            <div className='overlay'></div>
-
-            <span className='view'>Quick view</span>
-
-            <div className='star'>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-              <i className='fa fa-star' aria-hidden='true'></i>
-            </div>
-          </div>
-
-          <div className='colors'>
-            <div className='color white active'></div>
-            <div className='color green'></div>
-            <div className='color yellow'></div>
-          </div>
-
-          <span className='name'>rivet heaps collar</span>
-
-          <span className='price'>$30,00</span>
-        </div>*/}
       </div>
 
       <div className={styles['filter-box']}>
@@ -359,7 +245,7 @@ const ProductList = () => {
             className={`${styles['drop-down']} ${styles['expand-color']} fa fa-caret-down`}
             aria-hidden='true'
             onClick={(e) => {
-              handleDropdown(e);
+              handleDropdown(e)
             }}
           ></i>
         </div>
@@ -390,7 +276,7 @@ const ProductList = () => {
             className={`${styles['drop-down']} ${styles['expand-size']} fa fa-caret-down`}
             aria-hidden='true'
             onClick={(e) => {
-              handleDropdown(e);
+              handleDropdown(e)
             }}
           ></i>
         </div>
@@ -409,7 +295,7 @@ const ProductList = () => {
             className={`${styles['drop-down']} ${styles['expand-price']} fa fa-caret-down`}
             aria-hidden='true'
             onClick={(e) => {
-              handleDropdown(e);
+              handleDropdown(e)
             }}
           ></i>
         </div>
@@ -424,7 +310,7 @@ const ProductList = () => {
 
       <div className={styles['page-overlay']}></div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductList;
+export default ProductList

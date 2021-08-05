@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './Footer.module.css';
+import React from 'react'
+import styles from './Footer.module.css'
 
-import background from '../../images/background.png';
-import pattern from '../../images/pattern3.png';
+import background from '../../images/background.png'
+import pattern from '../../images/pattern3.png'
 
 const Footer = () => {
   return (
@@ -75,17 +75,18 @@ const Footer = () => {
               className={styles.input}
               contentEditable='true'
               onBlur='scrollBack(this)'
+              onChange={(e) => console.log(e)}
             />
             <button className={styles.btn}>subcribe</button>
           </div>
         </div>
       </div>
     </div>
-  );
-};
-
-function scrollBack(el) {
-  el.scrollLeft = 0;
+  )
 }
 
-export default Footer;
+function scrollBack(el) {
+  el.scrollLeft = 0
+}
+
+export default Footer

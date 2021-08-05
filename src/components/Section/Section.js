@@ -1,48 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import styles from './Section.module.css';
-import Option from '../Option/Option';
+import React, { useEffect, useState } from 'react'
+import styles from './Section.module.css'
+import Option from '../Option/Option'
 
-import model1 from '../../images/m1.jpg';
-import model2 from '../../images/m2.png';
-import model3 from '../../images/m3.png';
+import model1 from '../../images/m1.jpg'
+import model2 from '../../images/m2.png'
+import model3 from '../../images/m3.png'
 
-import item1 from '../../images/11.png';
-import item2 from '../../images/12.png';
-import item3 from '../../images/13.png';
-import item4 from '../../images/14.png';
+import item1 from '../../images/11.png'
+import item2 from '../../images/12.png'
+import item3 from '../../images/13.png'
+import item4 from '../../images/14.png'
 
-import b1 from '../../images/b1.png';
-import b2 from '../../images/b2.png';
-import b3 from '../../images/b3.png';
-import b4 from '../../images/b4.png';
-import b5 from '../../images/b5.png';
-import b6 from '../../images/b6.png';
+import b1 from '../../images/b1.png'
+import b2 from '../../images/b2.png'
+import b3 from '../../images/b3.png'
+import b4 from '../../images/b4.png'
+import b5 from '../../images/b5.png'
+import b6 from '../../images/b6.png'
 
-import h1 from '../../images/h1.png';
-import h2 from '../../images/h2.png';
-import h3 from '../../images/h3.png';
-import h4 from '../../images/h4.png';
+import h1 from '../../images/h1.png'
+import h2 from '../../images/h2.png'
+import h3 from '../../images/h3.png'
+import h4 from '../../images/h4.png'
 
-import s1 from '../../images/s1.png';
-import s2 from '../../images/s2.png';
-import s3 from '../../images/s3.png';
-import s4 from '../../images/s4.png';
+import s1 from '../../images/s1.png'
+import s2 from '../../images/s2.png'
+import s3 from '../../images/s3.png'
+import s4 from '../../images/s4.png'
 
-import wm1 from '../../images/wm1.png';
-import wm2 from '../../images/wm2.png';
-import wm3 from '../../images/wm3.png';
-import wm4 from '../../images/wm4.png';
+import wm1 from '../../images/wm1.png'
+import wm2 from '../../images/wm2.png'
+import wm3 from '../../images/wm3.png'
+import wm4 from '../../images/wm4.png'
 
-import k1 from '../../images/k1.png';
-import k2 from '../../images/k2.png';
-import k3 from '../../images/k3.png';
-import k4 from '../../images/k4.png';
+import k1 from '../../images/k1.png'
+import k2 from '../../images/k2.png'
+import k3 from '../../images/k3.png'
+import k4 from '../../images/k4.png'
 
-let items;
+let items
 
-let discoverBtn;
-let productItem;
-let productName;
+let discoverBtn
+let productItem
+let productName
 
 const MEN_CLOTHE_DATA = [
   {
@@ -77,7 +77,7 @@ const MEN_CLOTHE_DATA = [
     price: '$30,00',
     stars: 5,
   },
-];
+]
 
 const BAG_DATA = [
   {
@@ -128,7 +128,7 @@ const BAG_DATA = [
     price: '$29,00',
     stars: 5,
   },
-];
+]
 
 const HAT_DATA = [
   {
@@ -163,7 +163,7 @@ const HAT_DATA = [
     price: '$39,00',
     stars: 5,
   },
-];
+]
 
 const SHOES_DATA = [
   {
@@ -198,7 +198,7 @@ const SHOES_DATA = [
     price: '$99,00',
     stars: 5,
   },
-];
+]
 
 const WOMEN_CLOTHE_DATA = [
   {
@@ -233,7 +233,7 @@ const WOMEN_CLOTHE_DATA = [
     price: '$50,00',
     stars: 5,
   },
-];
+]
 
 const KID_CLOTHE_DATA = [
   {
@@ -268,123 +268,123 @@ const KID_CLOTHE_DATA = [
     price: '$29,00',
     stars: 5,
   },
-];
+]
 
-function Section(props) {
-  const { img, category, name, price } = props;
-  let index = 0;
-  const [dataRender, setDataRender] = useState(MEN_CLOTHE_DATA);
+const Section = (props) => {
+  const { img, category, name, price, history } = props
+  let index = 0
+  const [dataRender, setDataRender] = useState(MEN_CLOTHE_DATA)
 
   const renderClothes = () => {
-    index = 0;
-    setDataRender(MEN_CLOTHE_DATA);
-  };
+    index = 0
+    setDataRender(MEN_CLOTHE_DATA)
+  }
 
   const renderWomenClothes = () => {
-    index = 0;
-    setDataRender(WOMEN_CLOTHE_DATA);
-  };
+    index = 0
+    setDataRender(WOMEN_CLOTHE_DATA)
+  }
 
   const renderKidClothes = () => {
-    index = 0;
-    setDataRender(KID_CLOTHE_DATA);
-  };
+    index = 0
+    setDataRender(KID_CLOTHE_DATA)
+  }
 
   const renderBag = () => {
     // index = 0;
-    setDataRender(BAG_DATA);
-  };
+    setDataRender(BAG_DATA)
+  }
 
   const renderHat = () => {
-    index = 0;
-    setDataRender(HAT_DATA);
-  };
+    index = 0
+    setDataRender(HAT_DATA)
+  }
 
   const renderShoes = () => {
-    index = 0;
-    setDataRender(SHOES_DATA);
-  };
+    index = 0
+    setDataRender(SHOES_DATA)
+  }
 
   const handlePrevious = (e, items) => {
     // console.log('CLICK');
-    console.log(index);
-    let leftIndex = index - 1;
-    let rightIndex = index + 2;
+    console.log(index)
+    let leftIndex = index - 1
+    let rightIndex = index + 2
     // let rightIndex = index + 3;
     if (index == 0) {
-      return;
+      return
     }
-    items[leftIndex].style.opacity = '1';
+    items[leftIndex].style.opacity = '1'
     items.forEach((item) => {
-      item.style.transform = `translateX(${-100 * (index - 1)}%)`;
-    });
-    items[rightIndex].style.opacity = '0';
-    index--;
-  };
+      item.style.transform = `translateX(${-100 * (index - 1)}%)`
+    })
+    items[rightIndex].style.opacity = '0'
+    index--
+  }
 
   const handleNext = (e, items) => {
     // console.log('CLICK');
-    console.log(index);
-    let leftIndex = index;
-    let rightIndex = index + 3;
+    console.log(index)
+    let leftIndex = index
+    let rightIndex = index + 3
     if (rightIndex > items.length - 1) {
-      return;
+      return
     }
-    items[rightIndex].style.opacity = '1';
+    items[rightIndex].style.opacity = '1'
     items.forEach((item) => {
-      item.style.transform = `translateX(${-100 * (index + 1)}%)`;
-    });
+      item.style.transform = `translateX(${-100 * (index + 1)}%)`
+    })
     // items[rightIndex].style.opacity = '0';
-    items[leftIndex].style.opacity = '0';
-    index++;
-  };
+    items[leftIndex].style.opacity = '0'
+    index++
+  }
 
-  let containerId;
-  let switchSideClass;
-  let model;
+  let containerId
+  let switchSideClass
+  let model
 
   if (props.type === 'women') {
-    switchSideClass = `${styles.left} ${styles.switch} ${styles['women-model']}`;
-    model = model2;
-    containerId = 'id2';
+    switchSideClass = `${styles.left} ${styles.switch} ${styles['women-model']}`
+    model = model2
+    containerId = 'id2'
   }
   if (props.type === 'men') {
-    switchSideClass = `${styles.left}`;
-    model = model1;
-    containerId = 'id1';
+    switchSideClass = `${styles.left}`
+    model = model1
+    containerId = 'id1'
   }
   if (props.type === 'kid') {
-    switchSideClass = `${styles.left} ${styles.kid}`;
-    model = model3;
-    containerId = 'id3';
+    switchSideClass = `${styles.left} ${styles.kid}`
+    model = model3
+    containerId = 'id3'
   }
 
   useEffect(() => {
     if (props.type == 'men') {
-      setDataRender(MEN_CLOTHE_DATA);
+      setDataRender(MEN_CLOTHE_DATA)
     }
     if (props.type == 'women') {
-      setDataRender(WOMEN_CLOTHE_DATA);
+      setDataRender(WOMEN_CLOTHE_DATA)
     }
     if (props.type == 'kid') {
-      setDataRender(KID_CLOTHE_DATA);
+      setDataRender(KID_CLOTHE_DATA)
     }
 
-    items = document.querySelector(`#${containerId} #carousel`).childNodes;
+    items = document.querySelector(`#${containerId} #carousel`).childNodes
 
-    discoverBtn = document.querySelector(`#${styles['discover-btn']}`);
-    productItem = document.querySelectorAll(`.${styles['product']}`);
-    productName = document.querySelector(`.${styles['name']}`);
+    discoverBtn = document.querySelector(`#${styles['discover-btn']}`)
+    productItem = document.querySelectorAll(`.${styles['product']}`)
+    productName = document.querySelector(`.${styles['name']}`)
 
-    index = 0;
-  }, []);
+    index = 0
+  }, [])
 
   let productData = dataRender.map((product) => {
-    let starContainer = [];
+    let starContainer = []
     for (var i = 0; i < product.stars; i++) {
       starContainer.push(
         <i key={index} className='fa fa-star' aria-hidden='true'></i>
-      );
+      )
     }
 
     return (
@@ -394,7 +394,7 @@ function Section(props) {
             src={product.img}
             alt='product-image'
             className={styles['product']}
-            onClick={() => window.open('./product', '_self')}
+            onClick={() => history.push('/product/1')}
           />
         </div>
 
@@ -409,8 +409,8 @@ function Section(props) {
         <span className={styles.name}>{product.name}</span>
         <span className={styles.price}>{product.price}</span>
       </div>
-    );
-  });
+    )
+  })
 
   return (
     <div className={styles.container} id={containerId}>
@@ -426,7 +426,7 @@ function Section(props) {
           <span
             className={styles.more}
             id={styles['discover-btn']}
-            onClick={() => window.open('/products', '_self')}
+            onClick={() => history.push('products/1')}
           >
             discover more
           </span>
@@ -440,10 +440,11 @@ function Section(props) {
         <i
           className={`${styles.arrow} ${styles['left-arrow']} fa fa-caret-left`}
           onClick={(e) => {
-            items = document.querySelector(`#${containerId} #carousel`)
-              .childNodes;
-            console.log(items);
-            handlePrevious(e, items);
+            items = document.querySelector(
+              `#${containerId} #carousel`
+            ).childNodes
+            console.log(items)
+            handlePrevious(e, items)
           }}
           aria-hidden='true'
         ></i>
@@ -451,10 +452,11 @@ function Section(props) {
         <i
           className={`${styles.arrow} ${styles['right-arrow']} fa fa-caret-right`}
           onClick={(e) => {
-            items = document.querySelector(`#${containerId} #carousel`)
-              .childNodes;
-            console.log(items);
-            handleNext(e, items);
+            items = document.querySelector(
+              `#${containerId} #carousel`
+            ).childNodes
+            console.log(items)
+            handleNext(e, items)
           }}
           aria-hidden='true'
         ></i>
@@ -476,7 +478,7 @@ function Section(props) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Section;
+export default Section

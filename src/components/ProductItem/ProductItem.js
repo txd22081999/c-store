@@ -1,37 +1,37 @@
-import React from 'react';
-import styles from './ProductItem.module.css';
+import React from 'react'
+import styles from './ProductItem.module.css'
 
-import item1 from '../../images/14.png';
-import item2 from '../../images/12.png';
-import item3 from '../../images/13.png';
-import stamp1 from '../../images/exclusive.png';
-import stamp2 from '../../images/sold-out.png';
+import item1 from '../../images/14.png'
+import item2 from '../../images/12.png'
+import item3 from '../../images/13.png'
+import stamp1 from '../../images/exclusive.png'
+import stamp2 from '../../images/sold-out.png'
 
-const ProductItem = ({ id, img, stampImg, colorArr, name, price }) => {
+const ProductItem = ({ id, img, stampImg, colorArr, name, price, history }) => {
   const selectColor = (e) => {
-    const product = document.querySelector(`.item-id-${id}`);
-    const children = product.childNodes;
-    let colors;
+    const product = document.querySelector(`.item-id-${id}`)
+    const children = product.childNodes
+    let colors
 
     children.forEach((child) => {
-      let className = String(child.className);
+      let className = String(child.className)
       if (className.includes(`colors-item-id-${id}`)) {
-        colors = child;
+        colors = child
       }
-    });
+    })
 
-    let activeColor;
-    let selectedColor = e.target;
+    let activeColor
+    let selectedColor = e.target
 
     colors.childNodes.forEach((color) => {
       if (color.className.includes(styles.active)) {
-        activeColor = color;
+        activeColor = color
       }
-    });
+    })
 
-    activeColor.classList.toggle(styles.active);
-    e.target.classList.toggle(styles.active);
-  };
+    activeColor.classList.toggle(styles.active)
+    e.target.classList.toggle(styles.active)
+  }
 
   return (
     <div className={`${styles.item} item-id-${id}`}>
@@ -47,10 +47,12 @@ const ProductItem = ({ id, img, stampImg, colorArr, name, price }) => {
 
         <div
           className={styles.overlay}
-          onClick={() => window.open('/product', '_self')}
+          onClick={() => {
+            history.push(`/product/${id}`)
+          }}
         ></div>
 
-        <span className={styles.view}>Quick view</span>
+        {/* <span className={styles.view}>Quick view</span> */}
 
         <div className={styles.star}>
           <i className='fa fa-star' aria-hidden='true'></i>
@@ -63,8 +65,8 @@ const ProductItem = ({ id, img, stampImg, colorArr, name, price }) => {
 
       <div className={`${styles.colors} colors-item-id-${id}`}>
         {colorArr.map((item, index) => {
-          const { id, color } = item;
-          let element;
+          const { id, color } = item
+          let element
 
           if (index === 0) {
             element = (
@@ -75,7 +77,7 @@ const ProductItem = ({ id, img, stampImg, colorArr, name, price }) => {
                 onClick={(e) => selectColor(e)}
                 key={item.id}
               ></div>
-            );
+            )
           } else {
             element = (
               <div
@@ -85,11 +87,11 @@ const ProductItem = ({ id, img, stampImg, colorArr, name, price }) => {
                 onClick={(e) => selectColor(e)}
                 key={item.id}
               ></div>
-            );
+            )
           }
 
           // console.log(element);
-          return element;
+          return element
         })}
 
         {/* Color circle */}
@@ -111,7 +113,7 @@ const ProductItem = ({ id, img, stampImg, colorArr, name, price }) => {
 
       <span className={styles.price}>{price}</span>
     </div>
-  );
-};
+  )
+}
 
-export default ProductItem;
+export default ProductItem

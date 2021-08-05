@@ -46,6 +46,10 @@
   text-decoration: none;
 }
 
+.container a:hover {
+  text-decoration: underline;
+}
+
 .address-container {
   grid-area: address;
   display: flex;

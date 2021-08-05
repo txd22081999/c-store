@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 // import './ProductDetail.css';
-import styles from './ProductDetail.module.css';
+import styles from './ProductDetail.module.css'
 
-import black from '../../images/black.png';
-import blue from '../../images/blue.png';
-import white from '../../images/white.png';
-import avt1 from '../../images/avt1.jpg';
-import avt2 from '../../images/avt2.jpg';
-import avt3 from '../../images/avt3.jpg';
-import avt4 from '../../images/avt4.jpg';
+import black from '../../images/black.png'
+import blue from '../../images/blue.png'
+import white from '../../images/white.png'
+import avt1 from '../../images/avt1.jpg'
+import avt2 from '../../images/avt2.jpg'
+import avt3 from '../../images/avt3.jpg'
+import avt4 from '../../images/avt4.jpg'
 
 const DATA = [
   {
@@ -49,91 +49,94 @@ const DATA = [
     like: 33,
     dislike: 0,
   },
-];
+]
 
-let bigImg;
-let smallImgs;
-let sizeBtns;
-let quantity;
-let upBtn;
-let downBtn;
-let currentNumber = 1;
-let colors;
+let bigImg
+let smallImgs
+let sizeBtns
+let quantity
+let upBtn
+let downBtn
+let currentNumber = 1
+let colors
 
 const changeImage = (e) => {
-  let temp = bigImg.src;
-  bigImg.src = e.target.src;
-  e.target.src = temp;
-};
+  let temp = bigImg.src
+  bigImg.src = e.target.src
+  e.target.src = temp
+}
 
 const changeSize = (e) => {
-  let currentSize = document.querySelector(`.${styles['size-active']}`);
-  currentSize.classList.toggle(styles['size-active']);
-  e.target.classList.toggle(styles['size-active']);
-};
+  let currentSize = document.querySelector(`.${styles['size-active']}`)
+  currentSize.classList.toggle(styles['size-active'])
+  e.target.classList.toggle(styles['size-active'])
+}
 
 const upQuantity = (e) => {
-  console.log('BOOM');
-  currentNumber++;
-  quantity.textContent = currentNumber;
-};
+  console.log('BOOM')
+  currentNumber++
+  quantity.textContent = currentNumber
+}
 
 const downQuantity = (e) => {
-  if (currentNumber == 1) {
-    return;
+  if (parseInt(currentNumber) === 1) {
+    return
   }
-  currentNumber--;
-  quantity.textContent = currentNumber;
-};
+  currentNumber--
+  quantity.textContent = currentNumber
+}
 
 const changeColor = (e) => {
-  let currentColor = document.querySelector(`.${styles.active}`);
+  let currentColor = document.querySelector(`.${styles.active}`)
   // console.log(currentColor);
   // console.log('click');
-  currentColor.classList.toggle(styles.active);
-  e.target.classList.toggle(styles.active);
-};
+  currentColor.classList.toggle(styles.active)
+  e.target.classList.toggle(styles.active)
+}
 
 const ProductDetail = () => {
   useEffect(() => {
-    bigImg = document.querySelector(`#${styles['big-image']}`);
-    smallImgs = document.querySelectorAll(`.${styles['small-image']}`);
-    sizeBtns = document.querySelectorAll(`.${styles['size-btn']}`);
-    quantity = document.querySelector(`#${styles.number}`);
-    upBtn = document.querySelector(`#${styles.increase}`);
-    downBtn = document.querySelector(`#${styles.decrease}`);
-    colors = document.querySelectorAll(`.${styles.color}`);
-    // console.log(colors);
+    setTimeout(() => {
+      bigImg = document.querySelector(`#big-image`)
+      smallImgs = document.querySelectorAll(`.small-image`)
+      console.log(smallImgs)
+      sizeBtns = document.querySelectorAll(`.size-btn`)
+      quantity = document.querySelector(`#number`)
+      upBtn = document.querySelector(`#increase`)
+      downBtn = document.querySelector(`#decrease`)
+      colors = document.querySelectorAll(`.color`)
+      // console.log(colors);
 
-    smallImgs.forEach((item) => {
-      item.addEventListener('click', (e) => changeImage(e));
-    });
+      smallImgs.forEach((item) => {
+        item.addEventListener('click', (e) => changeImage(e))
+      })
 
-    sizeBtns.forEach((item) => {
-      item.addEventListener('click', (e) => changeSize(e));
-    });
+      sizeBtns.forEach((item) => {
+        item.addEventListener('click', (e) => changeSize(e))
+      })
 
-    upBtn.addEventListener('click', (e) => upQuantity(e));
+      upBtn.addEventListener('click', (e) => upQuantity(e))
 
-    downBtn.addEventListener('click', (e) => downQuantity(e));
+      downBtn.addEventListener('click', (e) => downQuantity(e))
 
-    colors.forEach((item) => {
-      item.addEventListener('click', (e) => changeColor(e));
-    });
-  }, []);
+      colors.forEach((item) => {
+        item.addEventListener('click', (e) => changeColor(e))
+      })
+    }, 0)
+  }, [])
 
   return (
     <div className={styles.container}>
       <div className={styles['detail-container']}>
         <div className={styles['image-container']}>
           <div className={styles['big-image-container']}>
-            <img id={styles['big-image']} src={black} alt='product-image' />
+            <img id='big-image' src={black} alt='product-image' />
           </div>
 
           <div className={styles['small-image-container']}>
             <div className={styles['small-image-wrapper']}>
               <img
-                className={styles['small-image']}
+                className={`${styles['small-image']} small-image`}
                 src={black}
                 alt='product-image'
               />
@@ -141,7 +144,7 @@ const ProductDetail = () => {
 
             <div className={styles['small-image-wrapper']}>
               <img
-                className={styles['small-image']}
+                className={`${styles['small-image']} small-image`}
                 src={white}
                 alt='product-image'
               />
@@ -149,7 +152,7 @@ const ProductDetail = () => {
 
             <div className={styles['small-image-wrapper']}>
               <img
-                className={styles['small-image']}
+                className={`${styles['small-image']} small-image`}
                 src={blue}
                 alt='product-image'
               />
@@ -157,7 +160,7 @@ const ProductDetail = () => {
 
             <div className={styles['small-image-wrapper']}>
               <img
-                className={styles['small-image']}
+                className={`${styles['small-image']} small-image`}
                 src={white}
                 alt='product-image'
               />
@@ -190,13 +193,23 @@ const ProductDetail = () => {
 
             <div className={styles.size}>
               <div
-                className={`${styles['size-btn']} ${styles.small} ${styles['size-active']}`}
+                className={`${styles['size-btn']} size-btn ${styles.small} ${styles['size-active']}`}
               >
                 S
               </div>
-              <div className={`${styles['size-btn']} ${styles.medium}`}>M</div>
-              <div className={`${styles['size-btn']} ${styles.large}`}>L</div>
-              <div className={`${styles['size-btn']} ${styles.xlarge}`}>XL</div>
+              <div
+                className={`${styles['size-btn']} size-btn ${styles.medium}`}
+              >
+                M
+              </div>
+              <div className={`${styles['size-btn']} size-btn ${styles.large}`}>
+                L
+              </div>
+              <div
+                className={`${styles['size-btn']} size-btn ${styles.xlarge}`}
+              >
+                XL
+              </div>
             </div>
           </div>
 
@@ -205,10 +218,10 @@ const ProductDetail = () => {
 
             <div className={styles.colors}>
               <div
-                className={`${styles.color} ${styles.black} ${styles.active}`}
+                className={`${styles.color} color ${styles.black} ${styles.active}`}
               ></div>
-              <div className={`${styles.color} ${styles.gray}`}></div>
-              <div className={`${styles.color} ${styles.white}`}></div>
+              <div className={`${styles.color} color ${styles.gray}`}></div>
+              <div className={`${styles.color} color ${styles.white}`}></div>
             </div>
           </div>
 
@@ -218,18 +231,18 @@ const ProductDetail = () => {
             <div className={styles.quantity}>
               <div
                 className={`${styles['quantity-btn']} ${styles.down}`}
-                id={styles.decrease}
+                id='decrease'
               >
                 <i className='fa fa-caret-down'></i>
               </div>
 
-              <span className={styles.number} id={styles.number}>
+              <span className={`${styles.number}`} id={'number'}>
                 1
               </span>
 
               <div
                 className={`${styles['quantity-btn']} ${styles.up}`}
-                id={styles.increase}
+                id='increase'
               >
                 <i className='fa fa-caret-up'></i>
               </div>
@@ -368,7 +381,7 @@ const ProductDetail = () => {
         <div className={styles['comments-divide']}></div>
 
         {DATA.map((item) => {
-          const { id, avatar, userName, date, content, like, dislike } = item;
+          const { id, avatar, userName, date, content, like, dislike } = item
           return (
             <div className={styles['comments-container']} key={id}>
               <div className={styles.comment}>
@@ -396,7 +409,7 @@ const ProductDetail = () => {
 
                   <div className={styles.content}>
                     {content.map((message, index) => {
-                      return <p key={index}>{message}</p>;
+                      return <p key={index}>{message}</p>
                     })}
                     {/* <p>Amazing jacket. I love it &lt;3</p>
 
@@ -441,19 +454,11 @@ const ProductDetail = () => {
 
               <div className={styles['comment-divide']}></div>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductDetail;
-
-// let bigImg = document.querySelector(styles['#big-image']);
-// let smallImgs = document.querySelectorAll(styles['.small-image']);
-// let bigImg = document.querySelector('#big-image');
-// let smallImgs = document.querySelectorAll('.small-image');
-
-// console.log(bigImg);
-// console.log(smallImgs);
+export default ProductDetail
