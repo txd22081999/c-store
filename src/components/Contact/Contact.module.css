@@ -21,7 +21,7 @@
 .left {
   height: 100%;
   width: 60%;
-  background-image: url(../../images/map.jpg);
+  background-image: url(/images/map.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -2,18 +2,10 @@ import React, { useEffect } from 'react'
 // import './ProductDetail.css';
 import styles from './ProductDetail.module.css'
 
-import black from '../../images/black.png'
-import blue from '../../images/blue.png'
-import white from '../../images/white.png'
-import avt1 from '../../images/avt1.jpg'
-import avt2 from '../../images/avt2.jpg'
-import avt3 from '../../images/avt3.jpg'
-import avt4 from '../../images/avt4.jpg'
-
 const DATA = [
   {
     id: 1,
-    avatar: avt1,
+    avatar: '/images/avt1.jpg',
     userName: 'Chris Tan',
     date: '25/06/20',
     content: ['Amazing jacket. I love it <3', 'I will come back in the future'],
@@ -22,7 +14,7 @@ const DATA = [
   },
   {
     id: 2,
-    avatar: avt2,
+    avatar: '/images/avt2.jpg',
     userName: 'Alex',
     date: '12/05/20',
     content: [`It's fit for me. Very good.`],
@@ -31,7 +23,7 @@ const DATA = [
   },
   {
     id: 3,
-    avatar: avt3,
+    avatar: '/images/avt3.jpg',
     userName: 'Charlie Smith',
     date: '03/05/20',
     content: ['The price is reasonable.'],
@@ -40,7 +32,7 @@ const DATA = [
   },
   {
     id: 4,
-    avatar: avt4,
+    avatar: '/images/avt4.jpg',
     userName: 'Krystal Jung',
     date: '19/04/20',
     content: [
@@ -63,7 +55,7 @@ let colors
 const changeImage = (e) => {
   let temp = bigImg.src
   bigImg.src = e.target.src
-  e.target.src = temp
+  // e.target.src = temp
 }
 
 const changeSize = (e) => {
@@ -99,7 +91,6 @@ const ProductDetail = () => {
     setTimeout(() => {
       bigImg = document.querySelector(`#big-image`)
       smallImgs = document.querySelectorAll(`.small-image`)
-      console.log(smallImgs)
       sizeBtns = document.querySelectorAll(`.size-btn`)
       quantity = document.querySelector(`#number`)
       upBtn = document.querySelector(`#increase`)
@@ -130,14 +121,14 @@ const ProductDetail = () => {
       <div className={styles['detail-container']}>
         <div className={styles['image-container']}>
           <div className={styles['big-image-container']}>
-            <img id='big-image' src={black} alt='product-image' />
+            <img id='big-image' src={'/images/black.png'} alt='product-image' />
           </div>
 
           <div className={styles['small-image-container']}>
             <div className={styles['small-image-wrapper']}>
               <img
                 className={`${styles['small-image']} small-image`}
-                src={black}
+                src={'/images/black.png'}
                 alt='product-image'
               />
             </div>
@@ -145,7 +136,7 @@ const ProductDetail = () => {
             <div className={styles['small-image-wrapper']}>
               <img
                 className={`${styles['small-image']} small-image`}
-                src={white}
+                src={'/images/white.png'}
                 alt='product-image'
               />
             </div>
@@ -153,7 +144,7 @@ const ProductDetail = () => {
             <div className={styles['small-image-wrapper']}>
               <img
                 className={`${styles['small-image']} small-image`}
-                src={blue}
+                src={'/images/blue.png'}
                 alt='product-image'
               />
             </div>
@@ -161,7 +152,7 @@ const ProductDetail = () => {
             <div className={styles['small-image-wrapper']}>
               <img
                 className={`${styles['small-image']} small-image`}
-                src={white}
+                src={'/images/black.png'}
                 alt='product-image'
               />
             </div>

@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-import nike from '../../images/nike.png'
-import pattern from '../../images/pattern2.png'
-
 import styles from '../Deal/Deal.module.css'
 
 let deadline = new Date('aug 08, 2021 23:59:59').getTime()
@@ -56,7 +53,7 @@ const Deal = ({ history }) => {
   return (
     <div className={styles.container}>
       <div className={styles.pattern}>
-        <img src={pattern} alt='pattern' />
+        <img src={'/images/pattern2.png'} alt='pattern' />
       </div>
       <div className={styles.text}>
         <span className={styles.header}>deal of the week</span>
@@ -124,7 +121,7 @@ const Deal = ({ history }) => {
         </div>
       </div>
       <div className={styles['img-container']}>
-        <img src={nike} alt='nike' />
+        <img src={'/images/nike.png'} alt='nike' />
       </div>
     </div>
   )

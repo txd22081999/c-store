@@ -1,11 +1,6 @@
 import React from 'react'
 import styles from './Category.module.css'
 
-import pattern from '../../images/pattern.png'
-import model1 from '../../images/1.png'
-import model2 from '../../images/2.png'
-import model3 from '../../images/3.png'
-
 const Category = ({ history }) => {
   return (
     <div className={styles.container}>
@@ -15,11 +10,11 @@ const Category = ({ history }) => {
         </div>
 
         <div className={styles['model-container']}>
-          <img className={styles.model} src={model1} alt='man model' />
+          <img className={styles.model} src={'/images/1.png'} alt='man model' />
         </div>
 
         <div className={styles.pattern}>
-          <img src={pattern} alt='' />
+          <img src={'/images/pattern.png'} alt='' />
         </div>
       </div>
 
@@ -29,11 +24,11 @@ const Category = ({ history }) => {
         </div>
 
         <div className={styles['model-container']}>
-          <img className={styles.model} src={model2} alt='man model' />
+          <img className={styles.model} src={'/images/2.png'} alt='man model' />
         </div>
 
         <div className={styles.pattern}>
-          <img src={pattern} alt='' />
+          <img src={'/images/pattern.png'} alt='' />
         </div>
       </div>
 
@@ -43,11 +38,11 @@ const Category = ({ history }) => {
         </div>
 
         <div className={styles['model-container']}>
-          <img className={styles.model} src={model3} alt='kid model' />
+          <img className={styles.model} src={'/images/3.png'} alt='kid model' />
         </div>
 
         <div className={styles.pattern}>
-          <img src={pattern} alt='' />
+          <img src={'/images/pattern.png'} alt='' />
         </div>
       </div>
     </div>

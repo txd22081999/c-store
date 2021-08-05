@@ -3,19 +3,6 @@ import styles from './ProductList.module.css'
 import FilterSlider from '../FilterSlider/FilterSlider'
 import ProductItem from '../ProductItem/ProductItem'
 
-import item1 from '../../images/14.png'
-import item2 from '../../images/12.png'
-import item3 from '../../images/13.png'
-import stamp1 from '../../images/exclusive.png'
-import stamp2 from '../../images/sold-out.png'
-
-import item4 from '../../images/pd4.png'
-import item5 from '../../images/pd5.png'
-import item6 from '../../images/pd6.png'
-import item7 from '../../images/pd7.png'
-import item8 from '../../images/pd8.png'
-import item9 from '../../images/pd9.png'
-
 const openFilterBox = (e) => {
   let filterBox = document.querySelector(`.${styles['filter-box']}`)
   let pageOverlay = document.querySelector(`.${styles['page-overlay']}`)
@@ -64,8 +51,8 @@ const ITEM_LIST = [
     id: 1,
     name: 'rivet heaps collar',
     price: '39,00',
-    img: item1,
-    stamp: stamp1,
+    img: '/images/14.png',
+    stamp: '/images/exclusive.png',
     colors: [
       { id: 11, color: 'gray' },
       { id: 21, color: 'black' },
@@ -76,7 +63,7 @@ const ITEM_LIST = [
     id: 2,
     name: 'white coat',
     price: '34,00',
-    img: item2,
+    img: '/images/12.png',
     colors: [
       { id: 11, color: 'white' },
       { id: 12, color: 'gray' },
@@ -84,10 +71,10 @@ const ITEM_LIST = [
   },
   {
     id: 3,
-    img: item3,
+    img: '/images/13.png',
     name: 'modern business',
     price: '49,00',
-    stamp: stamp2,
+    stamp: '/images/sold-out.png',
     colors: [
       { id: 11, color: 'gray' },
       { id: 12, color: 'black' },
@@ -95,7 +82,7 @@ const ITEM_LIST = [
   },
   {
     id: 4,
-    img: item4,
+    img: '/images/pd4.png',
     name: 'lightweight shelled jacket',
     price: '49,00',
     colors: [
@@ -105,7 +92,7 @@ const ITEM_LIST = [
   },
   {
     id: 5,
-    img: item5,
+    img: '/images/pd5.png',
     name: 'classic Retro-X',
     price: '49,00',
     colors: [
@@ -115,7 +102,7 @@ const ITEM_LIST = [
   },
   {
     id: 6,
-    img: item6,
+    img: '/images/pd6.png',
     name: 'synchilla Snap-T Pullover',
     price: '49,00',
     colors: [
@@ -126,7 +113,7 @@ const ITEM_LIST = [
   },
   {
     id: 7,
-    img: item7,
+    img: '/images/pd7.png',
     name: 'micropuff hoody',
     price: '49,00',
     colors: [
@@ -139,7 +126,7 @@ const ITEM_LIST = [
   },
   {
     id: 8,
-    img: item8,
+    img: '/images/pd8.png',
     name: 'Snap-T fleece pullover',
     price: '49,00',
     colors: [
@@ -150,7 +137,7 @@ const ITEM_LIST = [
   },
   {
     id: 9,
-    img: item9,
+    img: '/images/pd9.png',
     name: 'Iron Forge Hemp',
     price: '49,00',
     colors: [

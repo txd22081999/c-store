@@ -1,18 +1,15 @@
 import React from 'react'
 import styles from './Footer.module.css'
 
-import background from '../../images/background.png'
-import pattern from '../../images/pattern3.png'
-
 const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.background}>
-        <img src={background} alt='background' />
-        <img src={background} alt='background' />
+        <img src={'/images/background.png'} alt='background' />
+        <img src={'/images/background.png'} alt='background' />
       </div>
       <div className={styles.overlay}>
-        <img src={pattern} alt='pattern' />
+        <img src={'/images/pattern3.png'} alt='pattern' />
       </div>
 
       <div className={styles['grid-container']}>

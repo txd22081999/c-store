@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from './Contact.module.css'
 
-import map from '../../images/map.jpg'
-
 const Contact = () => {
   return (
     <div className={styles.container} id='contact-container'>
@@ -31,7 +29,7 @@ const Contact = () => {
         </div>
 
         <div className={styles.underlay}>
-          <img src={map} alt='map' />
+          <img src={'/images/map.jpg'} alt='map' />
         </div>
       </div>
     </div>

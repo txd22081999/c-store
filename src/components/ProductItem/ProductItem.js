@@ -1,12 +1,6 @@
 import React from 'react'
 import styles from './ProductItem.module.css'
 
-import item1 from '../../images/14.png'
-import item2 from '../../images/12.png'
-import item3 from '../../images/13.png'
-import stamp1 from '../../images/exclusive.png'
-import stamp2 from '../../images/sold-out.png'
-
 const ProductItem = ({ id, img, stampImg, colorArr, name, price, history }) => {
   const selectColor = (e) => {
     const product = document.querySelector(`.item-id-${id}`)

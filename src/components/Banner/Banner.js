@@ -1,6 +1,4 @@
 import React from 'react'
-import man from '../../images/man.png'
-import woman from '../../images/woman.png'
 
 import styles from './Banner.module.css'
 
@@ -8,7 +6,11 @@ const Banner = ({ history }) => {
   return (
     <div className={styles.container} id='banner'>
       <div className={styles['woman-img-container']}>
-        <img className={styles.model} src={woman} alt='woman model' />
+        <img
+          className={styles.model}
+          src={'/images/woman.png'}
+          alt='woman model'
+        />
       </div>
 
       <div className={styles.text}>
@@ -28,7 +30,7 @@ const Banner = ({ history }) => {
       </div>
 
       <div className={styles['man-img-container']}>
-        <img className={styles.model} src={man} alt='man model' />
+        <img className={styles.model} src={'/images/man.png'} alt='man model' />
       </div>
     </div>
   )

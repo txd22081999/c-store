@@ -2,41 +2,41 @@ import React, { useEffect, useState } from 'react'
 import styles from './Section.module.css'
 import Option from '../Option/Option'
 
-import model1 from '../../images/m1.jpg'
-import model2 from '../../images/m2.png'
-import model3 from '../../images/m3.png'
+// import model1 from '../../images/m1.jpg'
+// import model2 from '../../images/m2.png'
+// import model3 from '../../images/m3.png'
 
-import item1 from '../../images/11.png'
-import item2 from '../../images/12.png'
-import item3 from '../../images/13.png'
-import item4 from '../../images/14.png'
+// import item1 from '../../images/11.png'
+// import item2 from '../../images/12.png'
+// import item3 from '../../images/13.png'
+// import item4 from '../../images/14.png'
 
-import b1 from '../../images/b1.png'
-import b2 from '../../images/b2.png'
-import b3 from '../../images/b3.png'
-import b4 from '../../images/b4.png'
-import b5 from '../../images/b5.png'
-import b6 from '../../images/b6.png'
+// import b1 from '../../images/b1.png'
+// import b2 from '../../images/b2.png'
+// import b3 from '../../images/b3.png'
+// import b4 from '../../images/b4.png'
+// import b5 from '../../images/b5.png'
+// import b6 from '../../images/b6.png'
 
-import h1 from '../../images/h1.png'
-import h2 from '../../images/h2.png'
-import h3 from '../../images/h3.png'
-import h4 from '../../images/h4.png'
+// import h1 from '../../images/h1.png'
+// import h2 from '../../images/h2.png'
+// import h3 from '../../images/h3.png'
+// import h4 from '../../images/h4.png'
 
-import s1 from '../../images/s1.png'
-import s2 from '../../images/s2.png'
-import s3 from '../../images/s3.png'
-import s4 from '../../images/s4.png'
+// import s1 from '../../images/s1.png'
+// import s2 from '../../images/s2.png'
+// import s3 from '../../images/s3.png'
+// import s4 from '../../images/s4.png'
 
-import wm1 from '../../images/wm1.png'
-import wm2 from '../../images/wm2.png'
-import wm3 from '../../images/wm3.png'
-import wm4 from '../../images/wm4.png'
+// import wm1 from '../../images/wm1.png'
+// import wm2 from '../../images/wm2.png'
+// import wm3 from '../../images/wm3.png'
+// import wm4 from '../../images/wm4.png'
 
-import k1 from '../../images/k1.png'
-import k2 from '../../images/k2.png'
-import k3 from '../../images/k3.png'
-import k4 from '../../images/k4.png'
+// import k1 from '../../images/k1.png'
+// import k2 from '../../images/k2.png'
+// import k3 from '../../images/k3.png'
+// import k4 from '../../images/k4.png'
 
 let items
 
@@ -48,7 +48,7 @@ const MEN_CLOTHE_DATA = [
   {
     id: '1',
     name: 'long sleeve pullover',
-    img: item1,
+    img: '/images/11.png',
     kind: 'pullover',
     price: '$40,00',
     stars: 5,
@@ -56,7 +56,7 @@ const MEN_CLOTHE_DATA = [
   {
     id: '2',
     name: 'white coat',
-    img: item2,
+    img: '/images/12.png',
     kind: 'coat',
     price: '$30,00',
     stars: 4,
@@ -64,7 +64,7 @@ const MEN_CLOTHE_DATA = [
   {
     id: '3',
     name: 'modern business',
-    img: item3,
+    img: '/images/13.png',
     kind: 'vest',
     price: '$55,00',
     stars: 4,
@@ -72,7 +72,7 @@ const MEN_CLOTHE_DATA = [
   {
     id: '4',
     name: 'rivet heap collar',
-    img: item4,
+    img: '/images/14.png',
     kind: 'shirt',
     price: '$30,00',
     stars: 5,
@@ -83,7 +83,7 @@ const BAG_DATA = [
   {
     id: '11',
     name: 'bella taylor',
-    img: b1,
+    img: '/images/b1.png',
     kind: 'bag',
     price: '$29,00',
     stars: 5,
@@ -91,7 +91,7 @@ const BAG_DATA = [
   {
     id: '12',
     name: 'chala carryall zip',
-    img: b2,
+    img: '/images/b2.png',
     kind: 'bag',
     price: '$34,00',
     stars: 5,
@@ -99,7 +99,7 @@ const BAG_DATA = [
   {
     id: '13',
     name: 'chala half moon',
-    img: b3,
+    img: '/images/b3.png',
     kind: 'crossbody',
     price: '$29,00',
     stars: 5,
@@ -107,7 +107,7 @@ const BAG_DATA = [
   {
     id: '14',
     name: 'chala mini rose',
-    img: b4,
+    img: '/images/b4.png',
     kind: 'crossbody',
     price: '$44,00',
     stars: 5,
@@ -115,7 +115,7 @@ const BAG_DATA = [
   {
     id: '15',
     name: 'chala organizer cat',
-    img: b5,
+    img: '/images/b5.png',
     kind: 'crossbody',
     price: '$49,00',
     stars: 5,
@@ -123,7 +123,7 @@ const BAG_DATA = [
   {
     id: '16',
     name: 'maruca beetle wrislet',
-    img: b6,
+    img: '/images/b6.png',
     kind: 'bag',
     price: '$29,00',
     stars: 5,
@@ -134,7 +134,7 @@ const HAT_DATA = [
   {
     id: '21',
     name: 'ava cotton',
-    img: h1,
+    img: '/images/h1.png',
     kind: 'hat',
     price: '$39,00',
     stars: 5,
@@ -142,7 +142,7 @@ const HAT_DATA = [
   {
     id: '22',
     name: 'gain fedora',
-    img: h2,
+    img: '/images/h2.png',
     kind: 'hat',
     price: '$39,00',
     stars: 5,
@@ -150,7 +150,7 @@ const HAT_DATA = [
   {
     id: '23',
     name: `kid's sun hat`,
-    img: h3,
+    img: '/images/h3.png',
     kind: 'hat',
     price: '$39,00',
     stars: 5,
@@ -158,7 +158,7 @@ const HAT_DATA = [
   {
     id: '24',
     name: 'voyage creek',
-    img: h4,
+    img: '/images/h4.png',
     kind: 'hat',
     price: '$39,00',
     stars: 5,
@@ -169,7 +169,7 @@ const SHOES_DATA = [
   {
     id: '31',
     name: 'converse',
-    img: s1,
+    img: '/images/s1.png',
     kind: 'sneaker',
     price: '$99,00',
     stars: 5,
@@ -177,7 +177,7 @@ const SHOES_DATA = [
   {
     id: '32',
     name: 'harley davidson',
-    img: s2,
+    img: '/images/s2.png',
     kind: 'boot',
     price: '$99,00',
     stars: 5,
@@ -185,7 +185,7 @@ const SHOES_DATA = [
   {
     id: '33',
     name: 'adidas',
-    img: s3,
+    img: '/images/s3.png',
     kind: 'sneaker',
     price: '$99,00',
     stars: 5,
@@ -193,7 +193,7 @@ const SHOES_DATA = [
   {
     id: '34',
     name: 'timberland',
-    img: s4,
+    img: '/images/s4.png',
     kind: 'sneaker',
     price: '$99,00',
     stars: 5,
@@ -204,7 +204,7 @@ const WOMEN_CLOTHE_DATA = [
   {
     id: '41',
     name: 'cotton utility jumpsuit',
-    img: wm1,
+    img: '/images/wm1.png',
     kind: 'jumpsuit',
     price: '$50,00',
     stars: 5,
@@ -212,7 +212,7 @@ const WOMEN_CLOTHE_DATA = [
   {
     id: '42',
     name: 'Cropped Top',
-    img: wm2,
+    img: '/images/wm2.png',
     kind: 'top',
     price: '$50,00',
     stars: 5,
@@ -220,7 +220,7 @@ const WOMEN_CLOTHE_DATA = [
   {
     id: '43',
     name: 'lyocell blend dress',
-    img: wm3,
+    img: '/images/wm3.png',
     kind: 'dress',
     price: '$50,00',
     stars: 5,
@@ -228,7 +228,7 @@ const WOMEN_CLOTHE_DATA = [
   {
     id: '44',
     name: 'slim jean',
-    img: wm4,
+    img: '/images/wm4.png',
     kind: 'jean',
     price: '$50,00',
     stars: 5,
@@ -239,7 +239,7 @@ const KID_CLOTHE_DATA = [
   {
     id: '51',
     name: 'hooded jacket',
-    img: k1,
+    img: '/images/k1.png',
     kind: 'jacket',
     price: '$29,00',
     stars: 5,
@@ -247,7 +247,7 @@ const KID_CLOTHE_DATA = [
   {
     id: '52',
     name: 'glittery tulle dress',
-    img: k2,
+    img: '/images/k2.png',
     kind: 'dress',
     price: '$29,00',
     stars: 5,
@@ -255,7 +255,7 @@ const KID_CLOTHE_DATA = [
   {
     id: '53',
     name: 'comfort stretch short',
-    img: k3,
+    img: '/images/k3.png',
     kind: 'overall',
     price: '$29,00',
     stars: 5,
@@ -263,7 +263,7 @@ const KID_CLOTHE_DATA = [
   {
     id: '54',
     name: 'henley shirt',
-    img: k4,
+    img: '/images/k4.png',
     kind: 'shirt',
     price: '$29,00',
     stars: 5,
@@ -345,17 +345,17 @@ const Section = (props) => {
 
   if (props.type === 'women') {
     switchSideClass = `${styles.left} ${styles.switch} ${styles['women-model']}`
-    model = model2
+    model = '/images/m2.png'
     containerId = 'id2'
   }
   if (props.type === 'men') {
     switchSideClass = `${styles.left}`
-    model = model1
+    model = '/images/m1.jpg'
     containerId = 'id1'
   }
   if (props.type === 'kid') {
     switchSideClass = `${styles.left} ${styles.kid}`
-    model = model3
+    model = '/images/m3.png'
     containerId = 'id3'
   }
 

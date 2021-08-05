@@ -10,7 +10,7 @@
   width: 600px;
   height: 400px;
   /* background-color: black; */
-  background-image: url('../../images/globe.jpg');
+  background-image: url('/images/globe.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
